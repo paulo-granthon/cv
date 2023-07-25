@@ -13,3 +13,5 @@ export const Section = ({ children, title = "Section" }): SectionProps => {
         </section>
     )
 }
+
+export default Section
