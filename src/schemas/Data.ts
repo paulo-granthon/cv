@@ -16,7 +16,7 @@ export const Data = {
             "Adaptabillity",
             "Self-Motivation",
             "Resilience",
-            "Focus on Quality"
+            "Focus on Quality",
             "Creativity",
             "Attention to Detail",
             "Problem Solving",
