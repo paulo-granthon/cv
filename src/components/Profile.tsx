@@ -29,7 +29,6 @@ export const Profile = ({
                     </span>
                 </div>
             </div>
-            <Options />
         </section>
     );
 };
