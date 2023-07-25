@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { fetchGitHubProfilePicture } from './services/GitHubService';
 
 import { Profile } from "./components/Profile"
+import { Skills } from "./components/Skills"
 import { MetaTags } from "./components/MetaTags";
 
 import { Data as dataSchema } from "./schemas/Data";
 
+import "./App.css";
+
 function App() {
-    const { profile, about } = dataSchema;
+    const { profile, about, softSkills } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
 
     useEffect(() => {
@@ -28,6 +31,7 @@ function App() {
                         ) : (
                             <p>Loading profile...</p>
                         )}
+                        <Skills {...softSkills} />
                     </div>
                     <div className="resume__left">
 
