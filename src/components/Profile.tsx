@@ -7,13 +7,11 @@ export const Profile = ({
     location,
     email,
     telephone,
-    image,
 }) => {
     return (
         <section className="home" id="home">
             <div className="home__container section bd-grid">
                 <div className="home__data bd-grid">
-                    <img src={image} alt="profile_image" className="home__img" />
                     <h1 className="home__title">
                         <strong>{name}</strong>
                     </h1>
