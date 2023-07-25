@@ -1,18 +1,23 @@
+import { useState } from 'react'
+
 import Heading from "./components/Heading"
 import Section from "./components/Section"
 import List from "./components/List"
 
-import { useState } from 'react'
+import { Profile } from "./components/Profile"
+
+import { Data as dataSchema } from "./Schemas/Data";
 
 function App() {
+
+    const { profile } = dataSchema;
+
     return (
         <>
             <main className="l-main bd-container" id="bd-container">
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
-                        <Heading title={"Hello"} />
-                        <Section title={"This is a section"}>oi</Section>
-                        <List items={["1", "2", "3"]} render={(item: string) => <span className="gold">{item}</span>} />
+                        <Profile {...profile} />
                     </div>
                     <div className="resume__left">
 
