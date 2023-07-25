@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { fetchGitHubProfilePicture } from './services/GitHubService';
 
 import { Profile } from "./components/Profile"
+import { MetaTags } from "./components/MetaTags";
 
 import { Data as dataSchema } from "./schemas/Data";
 
 function App() {
-    const { profile } = dataSchema;
+    const { profile, about } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
 
     useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
     
     return (
         <>
+            <MetaTags {...profile} {...about} />
             <main className="l-main bd-container" id="bd-container">
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
