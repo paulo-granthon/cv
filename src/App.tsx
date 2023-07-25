@@ -6,7 +6,7 @@ import List from "./components/List"
 
 import { Profile } from "./components/Profile"
 
-import { Data as dataSchema } from "./Schemas/Data";
+import { Data as dataSchema } from "./schemas/Data";
 
 function App() {
 
