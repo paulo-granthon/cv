@@ -1,5 +1,10 @@
 // GitHubService.ts
 import axios from 'axios';
+import {
+    ProjectData,
+    ProjectProps,
+    LanguageAliases,
+} from '../shared/Portfolio'
 
 const GITHUB_API_BASE_URL = 'https://api.github.com';
 
@@ -26,7 +31,10 @@ export async function fetchGitHubProfilePicture() {
     }
 }
 
-export async function fetchGitHubRepositoriesLanguages() {
+export async function fetchGitHubRepositoriesLanguages(
+    hideLanguages: string[],
+    languageAliases: LanguageAliases,
+) {
     try {
         const githubUsername = import.meta.env.VITE_GITHUB_USERNAME;
         const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
@@ -42,7 +50,7 @@ export async function fetchGitHubRepositoriesLanguages() {
 
         const totalRepoCount = response.data.length;
 
-        const repoLanguagesPromises = response.data.map((repo: any) => {
+        const repoLanguagesPromises = response.data.map((repo: { languages_url: string }) => {
             return axios.get(`${repo.languages_url}`, {
                 headers: {
                     Authorization: `token ${githubToken}`,
@@ -60,10 +68,92 @@ export async function fetchGitHubRepositoriesLanguages() {
             });
         });
 
-        return Object.entries(languages).sort((a, b) => b[1] - a[1]).map(([language]) => language);
+        return Object.entries(languages)
+            .sort((a, b) => b[1] - a[1])
+            .map(([language]) => language)
+            .filter((lang) => !hideLanguages.includes(lang))
+            .map((lang) => languageAliases[lang] ? languageAliases[lang] : lang);
 
     } catch (error) {
         console.error('Error fetching GitHub repositories languages:', error);
+        return [];
+    }
+}
+
+export async function fetchPortfolioData(
+    portfolio: ProjectData[],
+    hideLanguages: string[],
+    languageAliases: LanguageAliases,
+): Promise<ProjectProps[]> {
+    try {
+        const githubUsername = import.meta.env.VITE_GITHUB_USERNAME;
+        const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+
+        const fetchRepoDetails = async (repoUrl: string) => {
+            const response = await axios.get(repoUrl, {
+                headers: {
+                    Authorization: `token ${githubToken}`,
+                },
+            });
+            return response.data;
+        };
+
+        const fetchRepoLanguages = async (repoUrl: string) => {
+            const response = await axios.get(repoUrl, {
+                headers: {
+                    Authorization: `token ${githubToken}`,
+                },
+            });
+            return response.data;
+        };
+
+        const languages: { [language: string]: number } = {};
+
+        const totalRepoCount = portfolio.length;
+
+        // Fetch repository details (including description)
+        const repoDetailsPromises = portfolio.map((item) => {
+            return fetchRepoDetails(`https://api.github.com/repos/${githubUsername}/${item.url}`);
+        });
+
+        const repoDetailsResponses = await Promise.all(repoDetailsPromises);
+
+        // Fetch languages for each repository
+        const repoLanguagesPromises = portfolio.map((item) => {
+            return fetchRepoLanguages(`https://api.github.com/repos/${githubUsername}/${item.url}/languages`);
+        });
+
+        const repoLanguagesResponses = await Promise.all(repoLanguagesPromises);
+
+        repoLanguagesResponses.forEach((repoLanguagesResponse) => {
+            const repoLanguages = Object.keys(repoLanguagesResponse);
+            const repoLanguageCount = repoLanguages.length;
+            repoLanguages.forEach((language) => {
+                languages[language] = (languages[language] || 0) + 1 / totalRepoCount / repoLanguageCount;
+            });
+        });
+
+        const projectPropsList: ProjectProps[] = portfolio.map((item, index) => {
+            const description = item.additionalDesc ? [item.additionalDesc] : [];
+            const languagesSorted = Object.entries(languages)
+                .sort((a, b) => b[1] - a[1])
+                .map(([language]) => language)
+                .filter((lang) => !hideLanguages.includes(lang))
+                .map((lang) => languageAliases[lang] ? languageAliases[lang] : lang);
+
+            const projectProps: ProjectProps = {
+                title: item.title,
+                url: `https://github.com/${githubUsername}/${item.url}`,
+                description: [repoDetailsResponses[index].description || '', ...description],
+                tech: [...item.additionalTech, ...languagesSorted],
+            };
+            return projectProps;
+        });
+
+        return projectPropsList;
+
+    } catch (error) {
+        console.error('Error fetching portfolio data from GitHub:', error);
         return [];
     }
 }
