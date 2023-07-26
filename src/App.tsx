@@ -5,6 +5,7 @@ import {
 } from './services/GitHubService';
 
 import { Profile } from "./components/Profile"
+import { About } from "./components/About"
 import { ListSection } from "./components/ListSection"
 import { MetaTags } from "./components/MetaTags";
 
@@ -48,6 +49,7 @@ function App() {
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
                         <Profile {...profile} image={profilePicture} />
+                        <About {...about} />
                         <ListSection title="Hard Skills" items={hardSkills} />
                         <ListSection title="Frameworks" items={frameworks} />
                         {languagesFetched.length > 0 && (
