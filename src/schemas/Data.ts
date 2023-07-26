@@ -1,6 +1,5 @@
-interface LanguagesAlias {
-    [key: string]: string;
-}
+import { ProjectData } from '../shared/Portfolio';
+import { LanguageAliases } from '../shared/Portfolio';
 
 export const Data = {
     profile: {
