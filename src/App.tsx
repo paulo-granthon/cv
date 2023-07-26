@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import {
     fetchGitHubProfilePicture,
-    fetchGitHubRepositoriesLanguages
+    fetchGitHubRepositoriesLanguages,
+    fetchPortfolioData,
 } from './services/GitHubService';
 
 import { Profile } from "./components/Profile"
