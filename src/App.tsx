@@ -5,7 +5,7 @@ import {
 } from './services/GitHubService';
 
 import { Profile } from "./components/Profile"
-import { Skills } from "./components/Skills"
+import { ListSection } from "./components/ListSection"
 import { MetaTags } from "./components/MetaTags";
 
 import { Data as dataSchema } from "./schemas/Data";
@@ -14,13 +14,13 @@ function App() {
     const {
         profile,
         about,
-        hardSkills,
-        hardSkillAlias,
+        languages,
+        languagesAlias,
         hideLanguages,
         softSkills,
     } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
-    const [hardSkillsFetched, setHardSkillsFetched] = useState<string[]>([]);
+    const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
 
     useEffect(() => {
 
@@ -31,10 +31,10 @@ function App() {
 
         // Fetch the hard skills from GitHub repositories when the component mounts
         fetchGitHubRepositoriesLanguages()
-            .then((languages) => {
-                languages = languages.filter((lang) => !hideLanguages.includes(lang));
-                const languagesMapped = languages.map((skill) => hardSkillAlias[skill] ? hardSkillAlias[skill] : skill);
-                setHardSkillsFetched([ ...hardSkills.items, ...languagesMapped ]);
+            .then((langs) => {
+                langs = langs.filter((lang) => !hideLanguages.includes(lang));
+                const languagesMapped = langs.map((lang) => languagesAlias[lang] ? languagesAlias[lang] : lang);
+                setlanguagesFetched([ ...languages.items, ...languagesMapped ]);
             })
             .catch((error) => console.error('Error fetching GitHub repositories languages:', error));
     }, []);
@@ -50,10 +50,10 @@ function App() {
                         ) : (
                             <p>Loading profile...</p>
                         )}
-                        {hardSkillsFetched.length > 0 && (
-                            <Skills title="Hard Skills" items={hardSkillsFetched} />
+                        {languagesFetched.length > 0 && (
+                            <ListSection title="Languages" items={languagesFetched} />
                         )}
-                        <Skills {...softSkills} />
+                        <ListSection {...softSkills} />
                     </div>
                     <div className="resume__left">
 

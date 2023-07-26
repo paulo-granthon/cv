@@ -14,13 +14,12 @@ export const Data = {
         label: "Perfil",
         description: "Experienced Fullstack Developer skilled in web and desktop app development using various languages and frameworks. Proficient in Agile methodologies, delivering efficient solutions. Strong focus on code quality, adhering to industry standards, and innovative problem-solving. Passionate about staying ahead of tech trends and thriving in excellence-driven teams.",
     },
-    hardSkills: {
-        title: "Skills",
+    languages: {
         items: [
             "C++",
         ],
     },
-    hardSkillAlias: {
+    languagesAlias: {
         Shell: "Bash",
         ShaderLab: "HLSL",
     } as HardSkillAlias,
