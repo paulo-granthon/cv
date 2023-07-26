@@ -366,17 +366,17 @@ body.dark-theme {
   font-size: var(--smaller-font-size);
 }
 
-.skills__content {
+.list_section__content {
   grid-template-columns: repeat(1, 1fr);
 }
 
-.skills__name {
+.list_section__name {
   display: flex;
   align-items: center;
   margin-bottom: var(--mb-1);
 }
 
-.skills__circle {
+.list_section__circle {
   display: inline-block;
   width: 5px;
   height: 5px;
