@@ -21,6 +21,7 @@ function App() {
         languagesAlias,
         hideLanguages,
         softSkills,
+        professionalHistory,
     } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
@@ -58,7 +59,7 @@ function App() {
                         <ListSection {...softSkills} />
                     </div>
                     <div className="resume__left">
-
+                        <Works {...professionalHistory} />
                     </div>
                 </div>
             </main>
