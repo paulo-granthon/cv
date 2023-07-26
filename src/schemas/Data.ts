@@ -53,4 +53,16 @@ export const Data = {
             "Curiosity",
         ],
     },
+    works: [
+        {
+            title: "Information Systems Developer",
+            period: "Aug. 2022 - Jul. 2023",
+            company: "GWCloud",
+            description: [
+                "I participated in the development and maintenance of information systems for external clients of GWCloud, alongside an Agile team.",
+                "My main tools were ServiceNow, JavaScript, and HTML. My work included both the Back End and Front End of each project, making it a Full Stack developer position.",
+                "During my time at GWCloud, I took part in the development of an HR platform for the Globo television network, which was awarded the "Operational Excellence" classification in the broadcaster's Partners in Excellence program due to the quality of the product delivered by me and my team."
+            ],
+        },
+    ],
 }
