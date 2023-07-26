@@ -14,6 +14,8 @@ function App() {
     const {
         profile,
         about,
+        hardSkills,
+        frameworks,
         languages,
         languagesAlias,
         hideLanguages,
@@ -46,6 +48,8 @@ function App() {
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
                         <Profile {...profile} image={profilePicture} />
+                        <ListSection title="Hard Skills" items={hardSkills} />
+                        <ListSection title="Frameworks" items={frameworks} />
                         {languagesFetched.length > 0 && (
                             <ListSection title="Languages" items={languagesFetched} />
                         )}
