@@ -37,7 +37,11 @@ export async function fetchGitHubRepositoriesLanguages() {
             },
         });
 
-        const languages: string[] = [];
+        // Count the frequency of each language
+        const languages: { [language: string]: number } = {};
+
+        const totalRepoCount = response.data.length;
+
         const repoLanguagesPromises = response.data.map((repo: any) => {
             return axios.get(`${repo.languages_url}`, {
                 headers: {
@@ -50,13 +54,14 @@ export async function fetchGitHubRepositoriesLanguages() {
 
         repoLanguagesResponses.forEach((repoLanguagesResponse) => {
             const repoLanguages = Object.keys(repoLanguagesResponse.data);
+            const repoLanguageCount = repoLanguages.length;
             repoLanguages.forEach((language) => {
-                if (!languages.includes(language)) {
-                    languages.push(language);
-                }
+                languages[language] = (languages[language] || 0) + 1 / totalRepoCount / repoLanguageCount;
             });
         });
-        return languages;
+
+        return Object.entries(languages).sort((a, b) => b[1] - a[1]).map(([language]) => language);
+
     } catch (error) {
         console.error('Error fetching GitHub repositories languages:', error);
         return [];
