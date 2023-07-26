@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
 
 interface ProfileProps {
-  name: string;
-  ocupation: string;
-  location: string;
-  email: string;
-  telephone: string;
-  image: string;
+    name: string;
+    ocupation: string;
+    location: string;
+    email: string;
+    telephone: string;
+    image: string | null;
 }
 
 export const Profile = ({
@@ -21,7 +21,11 @@ export const Profile = ({
         <section className="home" id="home">
             <div className="home__container section bd-grid">
                 <div className="home__data bd-grid">
-                    <img src={image} alt="profile_image" className="home__img" />
+                    {image !== null ? (
+                        <img src={image} alt="profile_image" className="home__img" />
+                    ) : (
+                        <p>Loading picture...</p>
+                    )}
                     <h1 className="home__title">
                         <strong>{name}</strong>
                     </h1>

@@ -45,11 +45,7 @@ function App() {
             <main className="l-main bd-container" id="bd-container">
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
-                        {profilePicture !== null ? (
-                            <Profile {...profile} image={profilePicture} />
-                        ) : (
-                            <p>Loading profile...</p>
-                        )}
+                        <Profile {...profile} image={profilePicture} />
                         {languagesFetched.length > 0 && (
                             <ListSection title="Languages" items={languagesFetched} />
                         )}
