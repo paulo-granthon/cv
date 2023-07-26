@@ -10,8 +10,12 @@ import { About } from "./components/About"
 import { ListSection } from "./components/ListSection"
 import { MetaTags } from "./components/MetaTags";
 import { Works } from "./components/Works";
+import { Education } from "./components/Education";
+import { Portfolio } from "./components/Portfolio";
 
 import { Data as dataSchema } from "./schemas/Data";
+
+import { ProjectProps } from "./shared/Portfolio"
 
 function App() {
     const {
@@ -20,13 +24,16 @@ function App() {
         hardSkills,
         frameworks,
         languages,
-        languagesAlias,
+        languageAliases,
         hideLanguages,
         softSkills,
         works,
+        education,
+        projects,
     } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
+    const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
 
     useEffect(() => {
 
@@ -64,6 +71,8 @@ function App() {
                     </div>
                     <div className="resume__left">
                         <Works works={works} />
+                        <Education education={education} />
+                        <Portfolio portfolio={portfolio} />
                     </div>
                 </div>
             </main>
