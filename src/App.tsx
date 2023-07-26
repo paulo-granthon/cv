@@ -8,6 +8,7 @@ import { Profile } from "./components/Profile"
 import { About } from "./components/About"
 import { ListSection } from "./components/ListSection"
 import { MetaTags } from "./components/MetaTags";
+import { Works } from "./components/Works";
 
 import { Data as dataSchema } from "./schemas/Data";
 
@@ -21,7 +22,7 @@ function App() {
         languagesAlias,
         hideLanguages,
         softSkills,
-        professionalHistory,
+        works,
     } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
@@ -59,7 +60,7 @@ function App() {
                         <ListSection {...softSkills} />
                     </div>
                     <div className="resume__left">
-                        <Works {...professionalHistory} />
+                        <Works works={works} />
                     </div>
                 </div>
             </main>
