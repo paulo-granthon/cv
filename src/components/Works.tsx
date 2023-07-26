@@ -1,13 +1,5 @@
 import { ReactElement } from "react";
-
-
-interface DescriptionProps {
-    desc: string,
-}
-
-const Description = ({ desc }: DescriptionProps): ReactElement => (
-    <p className="experience__description">{desc}</p>
-);
+import { Description } from "./Description"
 
 interface WorkProps {
     title: string,
@@ -41,7 +33,7 @@ interface WorksProps {
 export const Works = ({ works }: WorksProps): ReactElement => {
     return (
         <section className="work-experience section" id="experience">
-                <h2 className="section-title">Experiencia</h2>
+                <h2 className="section-title">Professional History</h2>
                 <div className="experience__container bd-grid">
                     {works.map((work) => (
                         <Work key={work.company} {...work} />
