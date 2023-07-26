@@ -10,12 +10,17 @@ import { MetaTags } from "./components/MetaTags";
 
 import { Data as dataSchema } from "./schemas/Data";
 
-import "./App.css";
-
 function App() {
-    const { profile, about, hardSkills, softSkills } = dataSchema;
+    const {
+        profile,
+        about,
+        hardSkills,
+        hardSkillAlias,
+        hideLanguages,
+        softSkills,
+    } = dataSchema;
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
-    const [hardSkills, setHardSkills] = useState<string[]>([]);
+    const [hardSkillsFetched, setHardSkillsFetched] = useState<string[]>([]);
 
     useEffect(() => {
 
@@ -25,9 +30,12 @@ function App() {
             .catch((error) => console.error('Error fetching profile picture:', error));
 
         // Fetch the hard skills from GitHub repositories when the component mounts
-        const { githubUsername, githubToken } = dataSchema;
-        fetchGitHubRepositoriesLanguages(githubUsername, githubToken)
-            .then((languages) => setHardSkills(languages))
+        fetchGitHubRepositoriesLanguages()
+            .then((languages) => {
+                languages = languages.filter((lang) => !hideLanguages.includes(lang));
+                const languagesMapped = languages.map((skill) => hardSkillAlias[skill] ? hardSkillAlias[skill] : skill);
+                setHardSkillsFetched([ ...hardSkills.items, ...languagesMapped ]);
+            })
             .catch((error) => console.error('Error fetching GitHub repositories languages:', error));
     }, []);
     
@@ -42,8 +50,8 @@ function App() {
                         ) : (
                             <p>Loading profile...</p>
                         )}
-                        {hardSkills.length > 0 && (
-                            <Skills title="Hard Skills" items={hardSkills} />
+                        {hardSkillsFetched.length > 0 && (
+                            <Skills title="Hard Skills" items={hardSkillsFetched} />
                         )}
                         <Skills {...softSkills} />
                     </div>

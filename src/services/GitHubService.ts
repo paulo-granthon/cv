@@ -38,12 +38,24 @@ export async function fetchGitHubRepositoriesLanguages() {
         });
 
         const languages: string[] = [];
-        response.data.forEach((repo: any) => {
-            if (repo.language && !languages.includes(repo.language)) {
-                languages.push(repo.language);
-            }
+        const repoLanguagesPromises = response.data.map((repo: any) => {
+            return axios.get(`${repo.languages_url}`, {
+                headers: {
+                    Authorization: `token ${githubToken}`,
+                },
+            });
         });
 
+        const repoLanguagesResponses = await Promise.all(repoLanguagesPromises);
+
+        repoLanguagesResponses.forEach((repoLanguagesResponse) => {
+            const repoLanguages = Object.keys(repoLanguagesResponse.data);
+            repoLanguages.forEach((language) => {
+                if (!languages.includes(language)) {
+                    languages.push(language);
+                }
+            });
+        });
         return languages;
     } catch (error) {
         console.error('Error fetching GitHub repositories languages:', error);

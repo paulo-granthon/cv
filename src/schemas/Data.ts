@@ -1,3 +1,7 @@
+interface HardSkillAlias {
+    [key: string]: string;
+}
+
 export const Data = {
     profile: {
         name: "Paulo Granthon",
@@ -8,10 +12,24 @@ export const Data = {
     },
     about: {
         label: "Perfil",
-        description: "Experienced Fullstack Developer skilled in web and desktop app development using various languages and frameworks. Proficient in Agile methodologies, delivering efficient solutions. Strong focus on code quality, adhering to industry standards, and innovative problem-solving. Passionate about staying ahead of tech trends and thriving in excellence-driven teams."
+        description: "Experienced Fullstack Developer skilled in web and desktop app development using various languages and frameworks. Proficient in Agile methodologies, delivering efficient solutions. Strong focus on code quality, adhering to industry standards, and innovative problem-solving. Passionate about staying ahead of tech trends and thriving in excellence-driven teams.",
     },
+    hardSkills: {
+        title: "Skills",
+        items: [
+            "C++",
+        ],
+    },
+    hardSkillAlias: {
+        Shell: "Bash",
+        ShaderLab: "HLSL",
+    } as HardSkillAlias,
+    hideLanguages: [
+        "Svelte",
+        "Dockerfile",
+    ],
     softSkills: {
-        title: "Test",
+        title: "Soft Skills",
         items: [
             "Adaptabillity",
             "Self-Motivation",
@@ -22,7 +40,6 @@ export const Data = {
             "Problem Solving",
             "Open-Mindedness",
             "Curiosity",
-            "Patience"
-        ]
-    }   
+        ],
+    },
 }
