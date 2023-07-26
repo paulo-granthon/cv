@@ -70,7 +70,7 @@ export const Data = {
             period: "Aug. 2022 - Jul. 2025",
             institution: "FATEC Prof. Jessen Vidal",
             description: [
-                "I Develop tailored solutions for challenges proposed by real companies each semester using Scrum methodology.",
+                "I develop tailored solutions for challenges proposed by real companies each semester using Scrum methodology.",
                 "Served as Product Owner of the team in my second project, leading the team to deliver the best project and earning recognition, participating in an internal meeting with the company to present our solution for their employee work schedule management needs.",
             ],
         },
