@@ -9,6 +9,20 @@ export const Data = {
         email: "pg.granthon@gmail.com",
         telephone: "+55 22 98124 9249",
     },
+    socials: [
+        {
+            label: "paulo-granthon",
+            name: "linkedin",
+            url: "https://www.linkedin.com/in/paulo-granthon",
+            className: "bxl-linkedin-square",
+        },
+        {
+            label: "paulo-granthon",
+            name: "github",
+            url: "https://github.com/paulo-granthon",
+            className: "bxl-github",
+        },
+    ],
     about: {
         label: "About",
         description: "Experienced Fullstack Developer skilled in web and desktop development using various languages and frameworks. Proficient in Agile methodologies, delivering efficient solutions. Strong focus on code quality and innovative solutions. Passionate about staying ahead of tech trends and thriving in challenging tasks.",
