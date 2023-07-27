@@ -315,6 +315,15 @@ body.dark-theme {
   margin-right: 0.25rem;
 }
 
+.cv-toolbox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .profile__description {
   text-align: center;
 }
@@ -322,6 +331,11 @@ body.dark-theme {
 .education__content,
 .experience__content {
   display: flex;
+}
+
+.experience__description {
+    max-width: 100%;
+    min-width: 0;
 }
 
 .education__time,
@@ -336,9 +350,9 @@ body.dark-theme {
   width: 12px;
   height: 12px;
   background-color: var(--text-color-light);
-  border-radius: 50%;
+  border-radius: 5%;
   margin-top: 0.25rem;
-  transform: translateX(20%);
+  transform: translateX(0.125rem) translateY(0.125rem) rotateZ(45deg);
 }
 
 .education__line,
@@ -353,11 +367,17 @@ body.dark-theme {
 .education__data,
 .experience__data {
   gap: 0.5rem;
+  width: 100%;
 }
 
 .education__title,
-.experience__title {
+.experience__title,
+.experience__hl-tech {
   font-size: var(--h3-font-size);
+}
+
+.experience__hl-tech {
+    color: var(--text-color-light);
 }
 
 .education__studies,
@@ -405,18 +425,35 @@ body.dark-theme {
     min-width: 160px;
 }
 
+.projects {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.project__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%
+}
+
 .project {
     margin-bottom: 1rem;
 }
 
-.projects-url:hover {
+.project-url:hover {
     color: var(--button-hover-color);
     text-shadow: 1px 1px 2px var(--container-color), 0 0 4px var(--container-color);
 }
 
-.projects-tech-list {
+.project-url-icon {
+    display: none;
+}
+
+.project-tech-list {
     display: inline-flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 1em;
 
 }
@@ -442,9 +479,11 @@ body.dark-theme {
   }
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 967px) {
   .bd-container {
       height: unset;
+      width: calc(100vw - 1rem);
+      max-width: unset;
   }
 
   .home__address {
@@ -466,6 +505,27 @@ body.dark-theme {
       justify-content: center;
       align-content: center;
       text-align: center;
+  }
+
+  .items__name {
+      min-width: unset;
+      width: calc(50vw - 0.5rem);
+  }
+  
+  .experience__container {
+      max-width: 100vw;
+  }
+
+  .experience__hl-tech {
+      display: none;
+  }
+
+  .project-url {
+      display: none;
+  }
+
+  .project-url-icon {
+      display: unset;
   }
 }
 
@@ -499,6 +559,10 @@ body.dark-theme {
   .resume__left,
   .resume__right {
     padding: 0 1rem;
+  }
+
+  .resume__right {
+    padding-top: 0.5rem;
   }
 
   .enable-snow {
