@@ -29,7 +29,7 @@
   /*========== Margenes ==========*/
   --mb-1: 0.5rem;
   --mb-2: 1rem;
-  --mb-3: 1.5rem;
+  --mb-3: 0.5rem;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
@@ -48,7 +48,7 @@ html {
 }
 
 body {
-  margin: 0 0 var(--header-height) 0;
+  margin: 2rem 0 var(--header-height) 0;
   padding: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -69,6 +69,7 @@ h2,
 h3 {
   color: var(--title-color);
   font-weight: var(--font-medium);
+  margin-bottom: 0rem;
 }
 
 ul {
@@ -124,7 +125,7 @@ body.dark-theme {
 
 /*========== CSS CLASS ==========*/
 .section {
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
 }
 
 .section-title {
@@ -138,7 +139,8 @@ body.dark-theme {
 }
 
 .bd-container {
-  max-width: 968px;
+  max-width: 1185px;
+  height: 1580px;
   width: calc(100% - 3rem);
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
@@ -173,7 +175,7 @@ body.dark-theme {
     bottom: -100%;
     left: 0;
     width: 100%;
-    padding: 2rem 1.5rem;
+    padding: 1rem 0.5rem;
     background-color: var(--body-color);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     border-radius: 1rem 1rem 0 0;
@@ -322,25 +324,26 @@ body.dark-theme {
 
 .education__time,
 .experience__time {
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 
 .education__rounder,
 .experience__rounder {
   position: relative;
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   background-color: var(--text-color-light);
   border-radius: 50%;
   margin-top: 0.25rem;
+  transform: translateX(20%);
 }
 
 .education__line,
 .experience__line {
   display: block;
   width: 2px;
-  height: 110%;
+  height: 90%;
   background-color: var(--text-color-light);
   transform: translate(7px, 0);
 }
@@ -404,7 +407,7 @@ body.dark-theme {
 }
 
 .project {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .projects-tech-list {
@@ -419,7 +422,7 @@ body.dark-theme {
 @media screen and (max-width: 320px) {
   .nav__list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem 0.5rem;
+    gap: 0.5em 0.25rem;
   }
 }
 
@@ -434,7 +437,7 @@ body.dark-theme {
 
 @media screen and (min-width: 968px) {
   body {
-    margin: 3rem 0;
+    margin: 3rem;
   }
 
   .bd-container {
@@ -452,6 +455,7 @@ body.dark-theme {
     grid-template-columns: 0.5fr 1fr;
     background-color: var(--container-color);
     box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+    padding: 1em;
   }
 
   .resume__left {
@@ -460,7 +464,7 @@ body.dark-theme {
 
   .resume__left,
   .resume__right {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   .enable-snow {
