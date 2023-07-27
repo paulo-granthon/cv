@@ -15,15 +15,15 @@ export const PDF = ({ contentId }: PDFGeneratorProps): ReactElement => {
             return;
         }
 
-        const formattedDate = new Date().toISOString().split("T")[0]; // Get the date in YYYY-MM-DD format
+        const elementRect = element.getBoundingClientRect();
 
         // Create the HTML2PDF instance
         const pdfOptions: Options = {
             margin: 0,
-            filename: 'paulo-granthon-resumee_' + formattedDate + '.pdf',
+            filename: 'paulo-granthon-resumee_' + new Date().toISOString().split("T")[0] + '.pdf',
             image: { type: "png", quality: 0.98 },
             html2canvas: { scale: 3, useCORS: true },
-            jsPDF: { unit: "px", format: [1185, 1580], orientation: "portrait" },
+            jsPDF: { unit: "px", format: [elementRect.width, elementRect.height], orientation: "portrait" },
             hotfixes: ["px_scaling"],
         };
 
@@ -44,7 +44,11 @@ export const PDF = ({ contentId }: PDFGeneratorProps): ReactElement => {
 
     return (
         <div>
-        {!pdfGenerating && <button onClick={handleGeneratePDF}>Generate PDF</button>}
+            {!pdfGenerating && <button
+                className='actions bx bxs-file-pdf'
+                title="Download CV as PDF"
+                onClick={handleGeneratePDF}
+            />}
         </div>
     );
 };
