@@ -65,8 +65,9 @@ function App() {
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
                         {!isGenerating ? (
-                            <PDF contentId="bd-container" setIsGenerating={setIsGenerating}/ >
-
+                            <div className="cv-toolbox">
+                                <PDF contentId="bd-container" setIsGenerating={setIsGenerating}/ >
+                            </div>
                         ) : (
                             null
                         )}
