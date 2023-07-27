@@ -1,12 +1,12 @@
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import html2pdf from "html2pdf.js";
 
 interface PDFGeneratorProps {
-  contentId: string;
+    contentId: string,
+    setIsGenerating: (isGenerating: boolean) => void,
 }
 
-export const PDF = ({ contentId }: PDFGeneratorProps): ReactElement => {
-    const [pdfGenerating, setPdfGenerating] = useState(false);
+export const PDF = ({ contentId, setIsGenerating }: PDFGeneratorProps): ReactElement => {
 
     const handleGeneratePDF = () => {
         const element = document.getElementById(contentId);
@@ -14,6 +14,8 @@ export const PDF = ({ contentId }: PDFGeneratorProps): ReactElement => {
             console.error("Element with ID " + contentId + " not found.");
             return;
         }
+
+        setIsGenerating(true);
 
         const elementRect = element.getBoundingClientRect();
 
@@ -27,14 +29,12 @@ export const PDF = ({ contentId }: PDFGeneratorProps): ReactElement => {
             hotfixes: ["px_scaling"],
         };
 
-        setPdfGenerating(true);
-
         html2pdf()
             .from(element)
             .set(pdfOptions)
             .outputPdf()
             .then(() => {
-                setPdfGenerating(false);
+                setIsGenerating(false);
             })
             .catch((error) => {
                 console.error("Error generating PDF:", error);
@@ -43,12 +43,10 @@ export const PDF = ({ contentId }: PDFGeneratorProps): ReactElement => {
     };
 
     return (
-        <div>
-            {!pdfGenerating && <button
-                className='actions bx bxs-file-pdf'
-                title="Download CV as PDF"
-                onClick={handleGeneratePDF}
-            />}
-        </div>
+        <button
+            className='actions bx bxs-file-pdf'
+            title="Download CV as PDF"
+            onClick={handleGeneratePDF}
+        />
     );
 };

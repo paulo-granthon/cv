@@ -35,10 +35,12 @@ function App() {
         education,
         projects,
     } = dataSchema;
+
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
     const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
-
+    const [isGenerating, setIsGenerating] = useState(false);
+    
     useEffect(() => {
 
         // Fetch the GitHub profile picture when the component mounts
@@ -64,7 +66,12 @@ function App() {
             <main className="l-main bd-container" id="bd-container">
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
-                        <PDF contentId="bd-container"/ >
+                        {!isGenerating ? (
+                            <PDF contentId="bd-container" setIsGenerating={setIsGenerating}/ >
+
+                        ) : (
+                            null
+                        )}
                         <Profile {...profile} image={profilePicture} />
                         <About {...about} />
                         <ListSection title="Hard Skills" items={hardSkills} />
