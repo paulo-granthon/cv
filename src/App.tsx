@@ -80,7 +80,7 @@ function App() {
                         <ListSection {...softSkills} />
                         <Socials label="Socials" socials={socials} />
                     </div>
-                    <div className="resume__left">
+                    <div className="resume__right">
                         <Works works={works} />
                         <Education education={education} />
                         <Portfolio portfolio={portfolio} />
