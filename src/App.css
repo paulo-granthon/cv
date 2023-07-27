@@ -443,11 +443,29 @@ body.dark-theme {
 }
 
 @media screen and (max-width: 968px) {
+  .bd-container {
+      height: unset;
+  }
+
+  .home__address {
+        justify-content: center;
+  }
+
+  .social__container {
+      justify-content: center;
+  }
+
   .items__content {
       display:flex;
       justify-content: center;
       align-content: center;
       align-items: center;
+  }
+
+  .items__data {
+      justify-content: center;
+      align-content: center;
+      text-align: center;
   }
 }
 
