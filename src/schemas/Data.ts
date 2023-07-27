@@ -25,7 +25,7 @@ export const Data = {
     ],
     about: {
         label: "About",
-        description: "Experienced Fullstack Developer skilled in web and desktop development using various languages and frameworks. Proficient in Agile methodologies, delivering efficient solutions. Strong focus on code quality and innovative solutions. Passionate about staying ahead of tech trends and thriving in challenging tasks.",
+        description: "Experienced Fullstack Developer skilled in web and desktop development using various languages and frameworks. Proficient in Agile methodologies. Strong focus on code quality and innovative solutions. Passionate about staying ahead of tech trends and thriving in challenging tasks.",
     },
     hardSkills: [
         "Git & GitHub",
@@ -51,6 +51,7 @@ export const Data = {
     hideLanguages: [
         "Svelte",
         "Dockerfile",
+        "Markdown",
     ],
     softSkills: {
         title: "Soft Skills",
@@ -63,7 +64,6 @@ export const Data = {
             "Attention to Detail",
             "Problem Solving",
             "Open-Mindedness",
-            "Curiosity",
         ],
     },
     works: [
