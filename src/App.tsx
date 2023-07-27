@@ -58,7 +58,12 @@ function App() {
             .then((projs) => setPortfolio(projs || [] ))
             .catch((error) => console.error('Error fetching portfolio data from GitHub:', error));
 
-    }, []);
+    }, [
+        hideLanguages,
+        languageAliases,
+        languages.items,
+        projects,
+    ]);
     return (
         <>
             <MetaTags {...profile} {...about} />
