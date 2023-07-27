@@ -40,7 +40,6 @@ function App() {
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
     const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
     const [isGenerating, setIsGenerating] = useState(false);
-    
     useEffect(() => {
 
         // Fetch the GitHub profile picture when the component mounts
@@ -59,7 +58,6 @@ function App() {
             .catch((error) => console.error('Error fetching portfolio data from GitHub:', error));
 
     }, []);
-    
     return (
         <>
             <MetaTags {...profile} {...about} />
