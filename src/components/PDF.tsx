@@ -32,7 +32,7 @@ export const PDF = ({ contentId, setIsGenerating }: PDFGeneratorProps): ReactEle
         const pdfOptions: PdfOptions = {
             margin: 0,
             filename: 'paulo-granthon-resumee_' + new Date().toISOString().split("T")[0] + '.pdf',
-            image: { type: "png", quality: 0.98 },
+            image: { type: "jpg", quality: 0.8 },
             html2canvas: { scale: 3, useCORS: true },
             jsPDF: { unit: "px", format: [elementRect.width, elementRect.height], orientation: "portrait" },
             hotfixes: ["px_scaling"],
@@ -54,7 +54,7 @@ export const PDF = ({ contentId, setIsGenerating }: PDFGeneratorProps): ReactEle
     return (
         <button
             className='actions bx bxs-file-pdf'
-            title="Download CV as PDF"
+            title="Download as PDF"
             onClick={handleGeneratePDF}
         />
     );
