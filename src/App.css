@@ -388,18 +388,19 @@ body.dark-theme {
 }
 
 .items__content {
-    display: flex;    
-    align-items: stretch;
-    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     row-gap: 0;
 
 }
 
-.items__column {
+.items__data {
     display: flex;    
-    align-items: flex-start;
+    flex-flow: row wrap;
+    align-items: stretch;
+}
+
+.items__name {
     min-width: 160px;
 }
 
