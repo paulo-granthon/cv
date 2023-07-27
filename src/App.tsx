@@ -12,6 +12,7 @@ import { MetaTags } from "./components/MetaTags";
 import { Works } from "./components/Works";
 import { Education } from "./components/Education";
 import { Portfolio } from "./components/Portfolio";
+import { Socials } from "./components/Socials";
 
 import { Data as dataSchema } from "./schemas/Data";
 
@@ -20,6 +21,7 @@ import { ProjectProps } from "./shared/Portfolio"
 function App() {
     const {
         profile,
+        socials,
         about,
         hardSkills,
         frameworks,
@@ -68,6 +70,7 @@ function App() {
                             <ListSection title="Languages" items={languagesFetched} />
                         )}
                         <ListSection {...softSkills} />
+                        <Socials label="Socials" socials={socials} />
                     </div>
                     <div className="resume__left">
                         <Works works={works} />
