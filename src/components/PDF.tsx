@@ -1,6 +1,15 @@
 import { ReactElement } from "react";
 import html2pdf from "html2pdf.js";
 
+interface PdfOptions {
+    margin?: number,
+    filename?: string,
+    image?: { type: string, quality: number },
+    html2canvas?: { scale: number, useCORS: boolean },
+    jsPDF?: { unit?: string, format?: number[], orientation?: string },
+    hotfixes: string[],
+}
+
 interface PDFGeneratorProps {
     contentId: string,
     setIsGenerating: (isGenerating: boolean) => void,
@@ -20,7 +29,7 @@ export const PDF = ({ contentId, setIsGenerating }: PDFGeneratorProps): ReactEle
         const elementRect = element.getBoundingClientRect();
 
         // Create the HTML2PDF instance
-        const pdfOptions: Options = {
+        const pdfOptions: PdfOptions = {
             margin: 0,
             filename: 'paulo-granthon-resumee_' + new Date().toISOString().split("T")[0] + '.pdf',
             image: { type: "png", quality: 0.98 },
@@ -36,7 +45,7 @@ export const PDF = ({ contentId, setIsGenerating }: PDFGeneratorProps): ReactEle
             .then(() => {
                 setIsGenerating(false);
             })
-            .catch((error) => {
+            .catch((error: Error) => {
                 console.error("Error generating PDF:", error);
             })
             .save();
