@@ -324,7 +324,7 @@ body.dark-theme {
 
 .education__time,
 .experience__time {
-  padding-right: 0.5rem;
+  padding-right: 1.5rem;
 }
 
 .education__rounder,
@@ -397,13 +397,10 @@ body.dark-theme {
 
 }
 
-.items__columns {
+.items__column {
     display: flex;    
-    align-items: stretch;
-    margin-top: 0;    
-    margin-bottom: 0;    
-    padding-top: 0;    
-    padding-bottom: 0;    
+    align-items: flex-start;
+    min-width: 160px;
 }
 
 .project {
