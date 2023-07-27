@@ -14,6 +14,8 @@ import { Education } from "./components/Education";
 import { Portfolio } from "./components/Portfolio";
 import { Socials } from "./components/Socials";
 
+import { PDF } from "./components/PDF";
+
 import { Data as dataSchema } from "./schemas/Data";
 
 import { ProjectProps } from "./shared/Portfolio"
@@ -62,6 +64,7 @@ function App() {
             <main className="l-main bd-container" id="bd-container">
                 <div className="resume" id="area-cv">
                     <div className="resume__left">
+                        <PDF contentId="bd-container"/ >
                         <Profile {...profile} image={profilePicture} />
                         <About {...about} />
                         <ListSection title="Hard Skills" items={hardSkills} />
