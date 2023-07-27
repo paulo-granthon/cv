@@ -15,6 +15,7 @@ import { Portfolio } from "./components/Portfolio";
 import { Socials } from "./components/Socials";
 
 import { PDF } from "./components/PDF";
+import { Theme } from "./components/Theme";
 
 import { Data as dataSchema } from "./schemas/Data";
 
@@ -66,7 +67,8 @@ function App() {
                     <div className="resume__left">
                         {!isGenerating ? (
                             <div className="cv-toolbox">
-                                <PDF contentId="bd-container" setIsGenerating={setIsGenerating}/ >
+                                <PDF contentId="bd-container" setIsGenerating={setIsGenerating} />
+                                <Theme/>
                             </div>
                         ) : (
                             null
