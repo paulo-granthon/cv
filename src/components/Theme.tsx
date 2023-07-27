@@ -8,8 +8,8 @@ export const Theme = (): ReactElement => {
     };
     return (
         <button 
-            className="actions "
-            title=""
+            className="actions"
+            title="Change theme"
             onClick={toggleTheme}
         >
             {darkMode? (
