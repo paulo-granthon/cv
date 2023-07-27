@@ -6,6 +6,7 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
+  --button-hover-color: #543344;
   --title-color: #434c5e;
   --text-color: #4c566a;
   --text-color-light: #7b88a1;
@@ -88,6 +89,7 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
+  --button-hover-color: #543344;
   --title-color: #eceff4;
   --text-color: #b5c4db;
   --container-color: #2e3440;
@@ -391,7 +393,6 @@ body.dark-theme {
     padding: 0;
     margin: 0;
     row-gap: 0;
-
 }
 
 .items__data {
@@ -413,6 +414,18 @@ body.dark-theme {
     justify-content: flex-start;
     gap: 1em;
 
+}
+
+.actions {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.actions:hover {
+    color: var(--button-hover-color);
 }
 
 /*========== MEDIA QUERIES ==========*/
