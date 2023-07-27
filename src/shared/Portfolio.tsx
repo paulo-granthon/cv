@@ -4,14 +4,16 @@ export interface RepoData {
 }
 
 export interface ProjectData {
-    title: string;
-    url: string;
-    additionalDesc: string;
-    additionalTech: string[];
+    title: string,
+    hl_tech: string,
+    url: string,
+    additionalDesc: string,
+    additionalTech: string[],
 }
 
 export interface ProjectProps {
     title: string,
+    hl_tech: string,
     url: string,
     description: string[],
     tech: string[],
@@ -22,6 +24,6 @@ export interface PortfolioProps {
 }
 
 export interface LanguageAliases {
-    [key: string]: string;
+    [key: string]: string,
 }
 

@@ -91,7 +91,8 @@ export const Data = {
     ],
     projects: [
         {
-            title: "Online Curriculum Vitae | React + TypeScript",
+            title: "Online Curriculum Vitae",
+			hl_tech: "React + TypeScript",
             url: "cv",
             additionalDesc: "This curriculum. Fetches my profile picture, languages and additional info for the projects on the portfolio section from my GitHub profile.",
             additionalTech: [
@@ -101,13 +102,15 @@ export const Data = {
             ]
         },
         {
-            title: "RustyTetris | Rust",
+            title: "RustyTetris",
+			hl_tech: "Rust",
             url: "rusty-tetris",
             additionalDesc: "",
             additionalTech: [],
         },
         {
-            title: "TheToDoOffice | Django + HTMX",
+            title: "TheToDoOffice",
+			hl_tech: "Django + HTMX",
             url: "TheToDoOffice",
             additionalDesc: "",
             additionalTech: [
@@ -115,7 +118,8 @@ export const Data = {
             ],
         },
         {
-            title: "Khali | Tkinter",
+            title: "Khali",
+			hl_tech: "Tkinter",
             url: "Khali",
             additionalDesc: "",
             additionalTech: [
@@ -123,7 +127,8 @@ export const Data = {
             ],
         },
         {
-            title: "API2Semestre | JavaFX",
+            title: "API2Semestre",
+			hl_tech: "JavaFX",
             url: "API2Semestre",
             additionalDesc: "",
             additionalTech: [
@@ -132,7 +137,8 @@ export const Data = {
             ],
         },
         {
-            title: "Envyman | Bash",
+            title: "Envyman",
+			hl_tech: "Bash",
             url: "envyman",
             additionalDesc: "",
             additionalTech: [],

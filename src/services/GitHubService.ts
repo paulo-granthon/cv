@@ -134,6 +134,7 @@ export async function fetchPortfolioData(
 
       const projectProps: ProjectProps = {
         title: item.title,
+        hl_tech: item.hl_tech,
         url: `https://github.com/${githubUsername}/${item.url}`,
         description: [repoDetailsResponse.description || '', ...description],
         tech: [...item.additionalTech, ...languagesSorted],
