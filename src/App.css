@@ -6,7 +6,7 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
-  --button-hover-color: #543344;
+  --button-hover-color: #067bdf;
   --title-color: #434c5e;
   --text-color: #4c566a;
   --text-color-light: #7b88a1;
@@ -89,7 +89,7 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --button-hover-color: #543344;
+  --button-hover-color: #063b7f;
   --title-color: #eceff4;
   --text-color: #b5c4db;
   --container-color: #2e3440;
@@ -307,7 +307,7 @@ body.dark-theme {
 }
 
 .social__link:hover {
-  color: var(--title-color);
+  color: var(--button-hover-color);
 }
 
 .social__icon {
@@ -407,6 +407,11 @@ body.dark-theme {
 
 .project {
     margin-bottom: 1rem;
+}
+
+.projects-url:hover {
+    color: var(--button-hover-color);
+    text-shadow: 1px 1px 2px var(--container-color), 0 0 4px var(--container-color);
 }
 
 .projects-tech-list {
