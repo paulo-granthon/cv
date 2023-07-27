@@ -6,6 +6,7 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
+  --url-color: #063FAF;
   --button-hover-color: #067bdf;
   --title-color: #434c5e;
   --text-color: #4c566a;
@@ -89,7 +90,8 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --button-hover-color: #063b7f;
+  --url-color: #36EFFF;
+  --button-hover-color: #36BBCF;
   --title-color: #eceff4;
   --text-color: #b5c4db;
   --container-color: #2e3440;
@@ -439,6 +441,10 @@ body.dark-theme {
 
 .project {
     margin-bottom: 1rem;
+}
+
+.project-url {
+    color: var(--url-color);
 }
 
 .project-url:hover {
