@@ -81,6 +81,7 @@ export const Data = {
             url: "cv",
             additionalDesc: "This curriculum. Fetches my profile picture, languages and additional info for the projects on the portfolio section from my GitHub profile.",
             additionalTech: [
+                "CI/CD",
                 "React",
                 "Docker",
             ]
@@ -95,17 +96,30 @@ export const Data = {
             title: "TheToDoOffice | Django + HTMX",
             url: "TheToDoOffice",
             additionalDesc: "",
-            additionalTech: [],
+            additionalTech: [
+                "Django",
+            ],
         },
         {
             title: "Khali | Tkinter",
             url: "Khali",
             additionalDesc: "",
-            additionalTech: [],
+            additionalTech: [
+                "Scrum",
+            ],
         },
         {
             title: "API2Semestre | JavaFX",
             url: "API2Semestre",
+            additionalDesc: "",
+            additionalTech: [
+                "Scrum",
+                "Product Owner",
+            ],
+        },
+        {
+            title: "Envyman | Bash",
+            url: "envyman",
             additionalDesc: "",
             additionalTech: [],
         },
