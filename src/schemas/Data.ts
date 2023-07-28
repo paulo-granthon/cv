@@ -94,7 +94,7 @@ export const Data = {
             title: "Online Curriculum Vitae",
 			hl_tech: "React + TypeScript",
             url: "cv",
-            additionalDesc: "This curriculum. Fetches my profile picture, languages and additional info for the projects on the portfolio section from my GitHub profile.",
+            additionalDesc: "Uses the GitHub API to fetch my profile picture, languages used and additional info for each of the projects on the portfolio section.",
             additionalTech: [
                 "CI/CD",
                 "React",
