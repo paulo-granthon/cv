@@ -5,16 +5,6 @@
 :root {
   --header-height: 3rem;
 
-  /*========== Colors ==========*/
-  --url-color: #063FAF;
-  --button-hover-color: #067bdf;
-  --title-color: #434c5e;
-  --text-color: #4c566a;
-  --text-color-light: #7b88a1;
-  --container-color: #ffffff;
-  --container-color-alt: #f7f9fb;
-  --body-color: #f2f4f8;
-
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
   --h1-font-size: 1.5rem;
@@ -28,7 +18,7 @@
   --font-medium: 500;
   --font-semi-bold: 600;
 
-  /*========== Margenes ==========*/
+  /*========== Margins ==========*/
   --mb-1: 0.5rem;
   --mb-2: 1rem;
   --mb-3: 0.5rem;
@@ -37,6 +27,30 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
+
+/* Light Theme Colors */
+body {
+  --url-color: #0072C6; /* A slightly brighter blue */
+  --button-hover-color: #1E90FF; /* A shade of blue that stands out */
+  --title-color: #2A2A2A; /* Dark gray for titles */
+  --text-color: #606060; /* Slightly darker text color */
+  --text-color-light: #808080; /* Slightly lighter text color */
+  --container-color: #FCFCFC; /* A light gray container background */
+  --container-color-alt: #F0F0F0; /* Slightly darker alternate container background */
+  --body-color: #FFFFFF; /* White body background */
+}
+
+/* Dark Theme Colors */
+body.dark-theme {
+  --url-color: #005688;
+  --button-hover-color: #0495A2;
+  --title-color: #D8E0EB;
+  --text-color: #94A3BB;
+  --container-color: #20232C;
+  --container-color-alt: #2B303B;
+  --body-color: #1A1D24;
+}
+
 
 /*========== BASE ==========*/
 *,
@@ -86,17 +100,6 @@ a {
 img {
   max-width: 100%;
   height: auto;
-}
-
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --url-color: #36EFFF;
-  --button-hover-color: #36BBCF;
-  --title-color: #eceff4;
-  --text-color: #b5c4db;
-  --container-color: #2e3440;
-  --container-color-alt: #3b4252;
-  --body-color: #242933;
 }
 
 /*========== Options button ==========*/
