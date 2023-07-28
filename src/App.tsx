@@ -41,7 +41,7 @@ function App() {
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
     const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
     const [isGenerating, setIsGenerating] = useState(false);
-    const [theme, setTheme] = useState<string>(localStorage.getItem("theme"));
+    const [theme, setTheme] = useState<string>("0");
 
     const toggleTheme = () => {
         document.body.classList.toggle("dark-theme");
@@ -52,11 +52,12 @@ function App() {
         });
     };
 
-    if (theme === "1") {
-        document.body.classList.add("dark-theme");
-    }
-
     useEffect(() => {
+
+        if (localStorage.getItem("theme") === "1") {
+            setTheme("1");
+            document.body.classList.add("dark-theme");
+        }
 
         // Fetch the GitHub profile picture when the component mounts
         fetchGitHubProfilePicture()
