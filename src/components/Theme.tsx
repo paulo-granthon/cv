@@ -1,18 +1,18 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 
-export const Theme = (): ReactElement => {
-    const [darkMode, setDarkMode] = useState<boolean>(false);
-    const toggleTheme = () => {
-        setDarkMode((prevDarkMode) => !prevDarkMode);
-        document.body.classList.toggle("dark-theme");
-    };
+interface ThemeProps {
+    theme: string,
+    toggleTheme: () => void,
+}
+
+export const Theme = ({ theme, toggleTheme }: ThemeProps): ReactElement => {
     return (
         <button 
             className="actions"
             title="Change theme"
             onClick={toggleTheme}
         >
-            {darkMode? (
+            {theme === "1" ? (
                 <i className='bx bx-moon'/>
             ) : (
                 <i className='bx bx-sun'/>
