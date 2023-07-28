@@ -6,7 +6,7 @@ export const Data = {
         name: "Paulo Granthon",
         ocupation: "FullStack Developer",
         location: "São José dos Campos, São Paulo",
-        email: "pg.granthon@gmail.com",
+        email: "pv.granthon@gmail.com",
         telephone: "+55 22 98124 9249",
     },
     socials: [
