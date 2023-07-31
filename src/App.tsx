@@ -13,7 +13,7 @@ import { Works } from "./components/Works";
 import { Education } from "./components/Education";
 import { Portfolio } from "./components/Portfolio";
 import { Socials } from "./components/Socials";
-import { Localization } from "./components/Localization";
+// import { Localization } from "./components/Localization";
 
 import { PDF } from "./components/PDF";
 import { Theme } from "./components/Theme";
@@ -74,7 +74,6 @@ function App() {
                         {!isGenerating ? (
                             <div className="cv-toolbox">
                                 <Theme/>
-                                <Localization/>
                                 <PDF contentId="bd-container" setIsGenerating={setIsGenerating} />
 
                             </div>
