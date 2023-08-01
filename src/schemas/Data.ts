@@ -99,6 +99,7 @@ export const Data = {
                 "CI/CD",
                 "React",
                 "Docker",
+                "Axios",
             ]
         },
         {
