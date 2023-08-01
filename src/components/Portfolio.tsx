@@ -20,9 +20,11 @@ const Project = ({ title, hl_tech, url, description, tech }: ProjectProps): Reac
                 </div>
                 <a className="project-url" href={url} target="_blank">{url}</a>
                 {description.map((desc, i) => <Description key={i} desc={desc} />)}
-                <div className="project-tech-list">
-                    {tech.map((t, i) => <p key={i}>{t}</p>)}
-                </div>
+                {tech.length > 0 ? (
+                    <div className="project-tech-list">
+                        {tech.map((t, i) => <p key={i}>{t}</p>)}
+                    </div>
+                ) : (null)}
             </div>
         </div>
     );

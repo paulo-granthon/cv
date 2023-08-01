@@ -8,6 +8,7 @@ export interface ProjectData {
     hl_tech: string,
     url: string,
     additionalDesc: string,
+    showGitHubLangs: boolean,
     additionalTech: string[],
 }
 

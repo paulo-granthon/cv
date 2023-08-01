@@ -6,7 +6,7 @@ export const Data = {
         name: "Paulo Granthon",
         ocupation: "FullStack Developer",
         location: "São José dos Campos, São Paulo",
-        email: "pg.granthon@gmail.com",
+        email: "pv.granthon@gmail.com",
         telephone: "+55 22 98124 9249",
     },
     socials: [
@@ -94,7 +94,8 @@ export const Data = {
             title: "Online Curriculum Vitae",
 			hl_tech: "React + TypeScript",
             url: "cv",
-            additionalDesc: "This curriculum. Fetches my profile picture, languages and additional info for the projects on the portfolio section from my GitHub profile.",
+            additionalDesc: "Uses the GitHub API to fetch my profile picture, languages used and additional info for each of the projects on the portfolio section.",
+			showGitHubLangs: true,
             additionalTech: [
                 "CI/CD",
                 "React",
@@ -107,6 +108,7 @@ export const Data = {
 			hl_tech: "Rust",
             url: "rusty-tetris",
             additionalDesc: "",
+            showGitHubLangs: false,
             additionalTech: [],
         },
         {
@@ -114,6 +116,7 @@ export const Data = {
 			hl_tech: "Django + HTMX",
             url: "TheToDoOffice",
             additionalDesc: "",
+			showGitHubLangs: true,
             additionalTech: [
                 "Django",
             ],
@@ -123,6 +126,7 @@ export const Data = {
 			hl_tech: "Tkinter",
             url: "Khali",
             additionalDesc: "",
+			showGitHubLangs: true,
             additionalTech: [
                 "Scrum",
             ],
@@ -132,6 +136,7 @@ export const Data = {
 			hl_tech: "JavaFX",
             url: "API2Semestre",
             additionalDesc: "",
+			showGitHubLangs: true,
             additionalTech: [
                 "Scrum",
                 "Product Owner",
@@ -143,6 +148,7 @@ export const Data = {
 			hl_tech: "Bash",
             url: "envyman",
             additionalDesc: "",
+            showGitHubLangs: false,
             additionalTech: [],
         },
     ] as ProjectData[],

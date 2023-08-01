@@ -42,7 +42,23 @@ function App() {
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
     const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
     const [isGenerating, setIsGenerating] = useState(false);
+    const [theme, setTheme] = useState<string>("0");
+
+    const toggleTheme = () => {
+        document.body.classList.toggle("dark-theme");
+        setTheme((prevTheme) => {
+            const newTheme = prevTheme === "1" ? "0" : "1";
+            localStorage.setItem("theme", newTheme);
+            return newTheme;
+        });
+    };
+
     useEffect(() => {
+
+        if (localStorage.getItem("theme") === "1") {
+            setTheme("1");
+            document.body.classList.add("dark-theme");
+        }
 
         // Fetch the GitHub profile picture when the component mounts
         fetchGitHubProfilePicture()
@@ -73,9 +89,8 @@ function App() {
                     <div className="resume__left">
                         {!isGenerating ? (
                             <div className="cv-toolbox">
-                                <Theme/>
                                 <PDF contentId="bd-container" setIsGenerating={setIsGenerating} />
-
+                                <Theme theme={theme} toggleTheme={toggleTheme}/>
                             </div>
                         ) : (
                             null
