@@ -134,6 +134,7 @@ export const Data = {
             additionalTech: [
                 "Scrum",
                 "Product Owner",
+                "Maven",
             ],
         },
         {
