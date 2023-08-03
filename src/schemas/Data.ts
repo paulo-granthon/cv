@@ -102,7 +102,7 @@ export const Data = {
                 "React",
                 "Docker",
                 "Axios",
-                "NdeJS",
+                "NodeJS",
             ]
         },
         {
