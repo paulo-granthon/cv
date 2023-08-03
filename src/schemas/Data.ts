@@ -38,6 +38,7 @@ export const Data = {
         "Django",
         "Rocket",
         "Diesel",
+        "NodeJS",
     ],
     languages: {
         items: [
@@ -101,6 +102,7 @@ export const Data = {
                 "React",
                 "Docker",
                 "Axios",
+                "NdeJS",
             ]
         },
         {
