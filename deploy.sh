@@ -1,5 +1,6 @@
 #!/bin/sh     
-sudo git pull origin master
+sudo git fetch
+sudo git pull origin main
 sudo npm install
 cd web
 npm install
