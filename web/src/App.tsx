@@ -55,6 +55,19 @@ function App() {
 
     useEffect(() => {
 
+        const apiEndpoint = '/api/data';
+
+        fetch(apiEndpoint) // Assuming you're using the fetch API for making HTTP requests
+            .then(response => response.json())
+            .then(data => {
+            // Handle the API response data
+            console.log(data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.log(error);
+        });
+
         if (localStorage.getItem("theme") === "1") {
             setTheme("1");
             document.body.classList.add("dark-theme");

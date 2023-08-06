@@ -1,12 +1,18 @@
 version: '3.1'
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  api:
+    build: ./api
+    container_name: cv-api
     ports:
-      - '3000:3000'
+      - '4000:4000'
     volumes:
-      - .:/app
-    environment:
-      - NODE_ENV=production
+      - ./api:/app
+  web:
+    build: ./web
+    container_name: cv-web
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./web:/app
+    stdin_open: true
+    tty: true
