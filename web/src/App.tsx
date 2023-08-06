@@ -55,7 +55,7 @@ function App() {
 
     useEffect(() => {
 
-        const apiEndpoint = '/api/data';
+        const apiEndpoint = '/api';
 
         fetch(apiEndpoint) // Assuming you're using the fetch API for making HTTP requests
             .then(response => response.json())
