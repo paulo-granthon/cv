@@ -77,7 +77,7 @@ The portfolio is designed to be easily customizable. The `Data.ts` file contains
 
 ## Deployment
 
-This portfolio can be deployed on a hosting platform (e.g., Vercel, Netlify) to make it accessible to the public. The deployment process is straightforward, and the application can be accessed currently via [Vercel](https://p-granthon.vercel.app/).
+This portfolio can be deployed on a hosting platform (e.g., Vercel, Netlify) to make it accessible to the public. The deployment process is straightforward, and the application can be accessed currently via [AWS](https://pgranthon.dev/).
 
 ## Contributing
 
