@@ -11,3 +11,6 @@ cd ..
 
 sudo systemctl restart nginx
 sudo pm2 restart all
+
+sudo docker-compose down
+sudo docker-compose up --build -d
