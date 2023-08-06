@@ -55,6 +55,7 @@ function App() {
 
     useEffect(() => {
 
+        console.log("requesting from api...");
         const apiEndpoint = '/api';
 
         fetch(apiEndpoint) // Assuming you're using the fetch API for making HTTP requests
