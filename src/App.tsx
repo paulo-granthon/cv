@@ -21,6 +21,7 @@ import { Theme } from "./components/Theme";
 import { Data as dataSchema } from "./schemas/Data";
 
 import { ProjectProps } from "./shared/Portfolio"
+import { Disclaimer } from './components/Disclaimer';
 
 function App() {
     const {
@@ -104,6 +105,11 @@ function App() {
                         )}
                         <ListSection {...softSkills} />
                         <Socials label="Socials" socials={socials} />
+                        {!isGenerating ? (
+                            <Disclaimer newUrl='https://pgranthon.dev/' />
+                        ) : (
+                            null
+                        )}
                     </div>
                     <div className="resume__right">
                         <Works works={works} />
