@@ -20,5 +20,5 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
           comment: Deploy
           working-directory: /home/ubuntu/cv
-          command: /bin/sh /home/ubuntu/cv/deploy.sh
+          command: /bin/sh echo "hello world" /home/ubuntu/cv/deploy.sh
 
