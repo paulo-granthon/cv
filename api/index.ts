@@ -29,7 +29,7 @@ const Visitor = mongoose.model("Visitor",visitorSchema)
 app.get('/visitor', async function(req,res){
       
     // Store the records from the Visitor table
-    let visitors = await Visitor.findOne({name: 'localhost'})
+    const visitors = await Visitor.findOne({name: 'localhost'})
   
     // If the app is being visited first
     // time, so no records
