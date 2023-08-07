@@ -1,7 +1,6 @@
 #!/bin/sh
 cd /home/ubuntu/cv/
-git fetch
-git pull
+git config core.sshCommand 'ssh -i /home/ubuntu/.ssh/id_rsa' && git fetch && git pull
 
 cd web
 npm install

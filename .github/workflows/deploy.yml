@@ -21,5 +21,4 @@ jobs:
           comment: Deploy
           working-directory: /home/ubuntu/cv
           command: ./deploy.sh
-          command: echo "hello" > hello
 
