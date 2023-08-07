@@ -1,6 +1,6 @@
 #!/bin/sh     
-sudo git fetch
-sudo git pull origin main
+git fetch
+git pull
 
 cd web
 npm install
@@ -9,8 +9,8 @@ cd ../api
 npm install
 cd ..
 
-sudo systemctl restart nginx
-sudo pm2 restart all
-
 sudo docker-compose down
 sudo docker-compose up --build -d
+
+sudo systemctl restart nginx
+sudo pm2 restart all
