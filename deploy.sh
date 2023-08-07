@@ -2,6 +2,8 @@
 cd /home/ubuntu/cv/
 git config core.sshCommand 'ssh -i /home/ubuntu/.ssh/id_rsa' && git fetch && git pull
 
+sudo echo "hello" > ./hello
+
 cd web
 npm install
 npm run build
