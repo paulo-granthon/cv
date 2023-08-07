@@ -1,4 +1,5 @@
 #!/bin/sh
+cd /home/ubuntu/cv/
 git fetch
 git pull
 
