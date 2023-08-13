@@ -7,7 +7,7 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "dist",
-      "BuildCommand": "vite build",
+      "BuildCommand": "npm run-script build",
       "StartCommand": "npm run-script start"
     }
   },
