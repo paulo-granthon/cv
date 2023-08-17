@@ -22,8 +22,14 @@ import { Data as dataSchema } from "./schemas/Data";
 
 import { ProjectProps } from "./shared/Portfolio"
 
-import { API } from 'aws-amplify';
-const CV_API_HELLO = 'hello'
+import { API, Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+API.configure(awsconfig);
+const CV_API_HELLO = 'hello';
+const helloApiInit = {
+    headers: {}
+};
 
 function App() {
     const {
@@ -58,11 +64,13 @@ function App() {
 
     useEffect(() => {
 
-            API.get(CV_API_HELLO, "hello", {}).then(response => {
-                console.log(response)
-            }).catch(error => {
-                console.log(error)
-            })
+        API.get(CV_API_HELLO, "/hello", helloApiInit).then(response => {
+            console.log("request successful")
+            console.log(response)
+        }).catch(error => {
+            console.log("request error")
+            console.log(error)
+        })
 
         if (localStorage.getItem("theme") === "1") {
             setTheme("1");
