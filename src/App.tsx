@@ -22,6 +22,9 @@ import { Data as dataSchema } from "./schemas/Data";
 
 import { ProjectProps } from "./shared/Portfolio"
 
+import { API } from 'aws-amplify';
+const CV_API_HELLO = 'hello'
+
 function App() {
     const {
         profile,
@@ -55,19 +58,11 @@ function App() {
 
     useEffect(() => {
 
-        console.log("requesting from api...");
-        const apiEndpoint = '/api/message';
-
-        fetch(apiEndpoint) // Assuming you're using the fetch API for making HTTP requests
-            .then(response => response.json())
-            .then(data => {
-            // Handle the API response data
-            console.log(data);
-        })
-        .catch(error => {
-            // Handle errors
-            console.log(error);
-        });
+            API.get(CV_API_HELLO, "hello", {}).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
 
         if (localStorage.getItem("theme") === "1") {
             setTheme("1");
