@@ -21,7 +21,6 @@ import { Theme } from "./components/Theme";
 import { Data as dataSchema } from "./schemas/Data";
 
 import { ProjectProps } from "./shared/Portfolio"
-import { Disclaimer } from './components/Disclaimer';
 
 function App() {
     const {
