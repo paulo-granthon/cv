@@ -16,6 +16,12 @@
     }
   },
   "function": {
+    "ghfetch": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "hello": {
       "build": true,
       "dependsOn": [],
