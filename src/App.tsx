@@ -26,6 +26,7 @@ import { API, Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
+
 const CV_API_HELLO = 'hello';
 const helloApiInit = {
     headers: {}
@@ -65,11 +66,9 @@ function App() {
     useEffect(() => {
 
         API.get(CV_API_HELLO, "/hello", helloApiInit).then(response => {
-            console.log("request successful")
-            console.log(response)
+            console.log("request successful from /hello:", response);
         }).catch(error => {
-            console.log("request error")
-            console.log(error)
+            console.log("request error from /hello:", error);
         })
 
         if (localStorage.getItem("theme") === "1") {

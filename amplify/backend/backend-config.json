@@ -1,6 +1,6 @@
 {
   "api": {
-    "hello": {
+    "ghfetch": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "hello"
+          "resourceName": "ghfetchpfp"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -16,9 +16,8 @@
     }
   },
   "function": {
-    "ghfetch": {
+    "ghfetchpfp": {
       "build": true,
-      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -30,6 +29,30 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_ghfetchpfp_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ghfetchpfp"
+        }
+      ]
+    },
+    "AMPLIFY_function_ghfetchpfp_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ghfetchpfp"
+        }
+      ]
+    },
+    "AMPLIFY_function_ghfetchpfp_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ghfetchpfp"
+        }
+      ]
+    },
     "AMPLIFY_function_hello_deploymentBucketName": {
       "usedBy": [
         {

@@ -1,12 +1,19 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "hello": {
+    "ghfetch": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
     }
   },
   "function": {
+    "ghfetchpfp": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "hello": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

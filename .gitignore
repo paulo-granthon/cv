@@ -48,3 +48,6 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+../../_dev/cv/amplify/mock-data
+../../_dev/cv/amplify/mock-api-resources
