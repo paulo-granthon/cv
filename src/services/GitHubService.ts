@@ -21,7 +21,7 @@ const GITHUB_API_BASE_URL = 'https://api.github.com';
 export async function fetchGitHubProfilePicture() {
     return API.get(CV_API_GHFETCH, '/' + CV_FN_GHFETCHPFP, headers).then(response => {
         console.log(response);
-        return response.data.body;
+        return response.body;
     });
 }
 
