@@ -12,13 +12,6 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "ghfetchpfp": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
-    },
     "ghpfp": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
