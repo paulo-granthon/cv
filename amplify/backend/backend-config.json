@@ -30,11 +30,6 @@
     }
   },
   "function": {
-    "ghfetchpfp": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "ghpfp": {
       "build": true,
       "dependsOn": [],
@@ -49,30 +44,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_ghfetchpfp_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "ghfetchpfp"
-        }
-      ]
-    },
-    "AMPLIFY_function_ghfetchpfp_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "ghfetchpfp"
-        }
-      ]
-    },
-    "AMPLIFY_function_ghfetchpfp_secretsPathAmplifyAppId": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "ghfetchpfp"
-        }
-      ]
-    },
     "AMPLIFY_function_ghpfp_deploymentBucketName": {
       "usedBy": [
         {
