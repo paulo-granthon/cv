@@ -1,9 +1,9 @@
 {
   "version": 1,
   "paths": {
-    "/ghpfp": {
-      "name": "/ghpfp",
-      "lambdaFunction": "ghpfp",
+    "/hello": {
+      "name": "/hello",
+      "lambdaFunction": "hello",
       "permissions": {
         "setting": "open"
       }

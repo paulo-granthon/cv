@@ -6,18 +6,20 @@ import {
     LanguageAliases,
 } from '../shared/Portfolio'
 
+const headers = { headers: {}};
+
 import { API, Amplify } from 'aws-amplify';
 import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
 
 const CV_API_GHFETCH = 'ghfetch';
-const CV_FN_GHFETCHPFP = 'ghfetchpfp'
+const CV_FN_GHFETCHPFP = 'ghpfp'
 
 const GITHUB_API_BASE_URL = 'https://api.github.com';
 
 export async function fetchGitHubProfilePicture() {
-    return API.get(CV_API_GHFETCH, '/' + CV_FN_GHFETCHPFP, {headers: {}}).then(response => {
+    return API.get(CV_API_GHFETCH, '/' + CV_FN_GHFETCHPFP, headers).then(response => {
         console.log(response);
         return response.data.body;
     });

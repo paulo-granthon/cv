@@ -1,0 +1,7 @@
+{
+  "lambdaLayers": [],
+  "secretNames": [
+    "GITHUB_USERNAME",
+    "GITHUB_TOKEN"
+  ]
+}

@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^5.1.1",
+    "@aws-sdk/client-ssm": "^3.395.0",
     "aws-amplify": "^5.3.8",
-    "aws-sdk": "^2.1439.0",
+    "aws-sdk": "^2.1440.0",
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

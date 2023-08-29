@@ -8,7 +8,21 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "ghfetchpfp"
+          "resourceName": "ghpfp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "hello": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "hello"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -18,6 +32,12 @@
   "function": {
     "ghfetchpfp": {
       "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ghpfp": {
+      "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -50,6 +70,30 @@
         {
           "category": "function",
           "resourceName": "ghfetchpfp"
+        }
+      ]
+    },
+    "AMPLIFY_function_ghpfp_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ghpfp"
+        }
+      ]
+    },
+    "AMPLIFY_function_ghpfp_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ghpfp"
+        }
+      ]
+    },
+    "AMPLIFY_function_ghpfp_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ghpfp"
         }
       ]
     },

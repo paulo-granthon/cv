@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import {
     fetchGitHubProfilePicture,
-    fetchGitHubRepositoriesLanguages,
-    fetchPortfolioData,
+//     fetchGitHubRepositoriesLanguages,
+//     fetchPortfolioData,
 } from './services/GitHubService';
 
 import { Profile } from "./components/Profile"
@@ -27,7 +27,6 @@ import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
 
-const CV_API_HELLO = 'hello';
 const helloApiInit = {
     headers: {}
 };
@@ -49,8 +48,8 @@ function App() {
     } = dataSchema;
 
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
-    const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
-    const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
+    const [languagesFetched] = useState<string[]>([]);
+    const [portfolio] = useState<ProjectProps[]>([]);
     const [isGenerating, setIsGenerating] = useState(false);
     const [theme, setTheme] = useState<string>("0");
 
@@ -65,11 +64,17 @@ function App() {
 
     useEffect(() => {
 
-        API.get(CV_API_HELLO, "/hello", helloApiInit).then(response => {
+        API.get("hello", "/hello", helloApiInit).then(response => {
             console.log("request successful from /hello:", response);
         }).catch(error => {
             console.log("request error from /hello:", error);
         })
+
+        // API.get("ghfetch", "/ghpfp", helloApiInit).then(response => {
+        //     console.log("request successful from /ghpfp:", response);
+        // }).catch(error => {
+        //     console.log("request error from /ghpfp:", error);
+        // })
 
         if (localStorage.getItem("theme") === "1") {
             setTheme("1");
@@ -81,15 +86,15 @@ function App() {
             .then((avatarUrl) => setProfilePicture(avatarUrl))
             .catch((error) => console.error('Error fetching profile picture:', error));
 
-        // Fetch the hard skills from GitHub repositories when the component mounts
-        fetchGitHubRepositoriesLanguages(hideLanguages, languageAliases)
-            .then((langs) => setlanguagesFetched([ ...languages.items, ...langs ]))
-            .catch((error) => console.error('Error fetching GitHub repositories languages:', error));
-
-        // Fetch the portfolio data from GitHub when the component mounts
-        fetchPortfolioData(projects, hideLanguages, languageAliases)
-            .then((projs) => setPortfolio(projs || [] ))
-            .catch((error) => console.error('Error fetching portfolio data from GitHub:', error));
+        // // Fetch the hard skills from GitHub repositories when the component mounts
+        // fetchGitHubRepositoriesLanguages(hideLanguages, languageAliases)
+        //     .then((langs) => setlanguagesFetched([ ...languages.items, ...langs ]))
+        //     .catch((error) => console.error('Error fetching GitHub repositories languages:', error));
+        //
+        // // Fetch the portfolio data from GitHub when the component mounts
+        // fetchPortfolioData(projects, hideLanguages, languageAliases)
+        //     .then((projs) => setPortfolio(projs || [] ))
+        //     .catch((error) => console.error('Error fetching portfolio data from GitHub:', error));
 
     }, [
         hideLanguages,
