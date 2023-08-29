@@ -20,7 +20,7 @@ exports.handler = async (event) => {
     if (!githubUsername || !githubToken) {
         console.error('GitHub username or token not found in environment variables.');
         return {
-            StatusCode: 200,
+            StatusCode: 502,
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "*"
@@ -45,12 +45,12 @@ exports.handler = async (event) => {
 
     }).catch(error=>{
         return {
-            StatusCode: 200,
+            StatusCode: 503,
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "*"
             },
-            body: JSON.stringify('Bro...\t', error)
+            body: JSON.stringify('ghfetchpfp -- Error accessing GitHub API to request profile picture: ', error)
         }
     });
 };
