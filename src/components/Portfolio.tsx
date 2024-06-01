@@ -37,7 +37,7 @@ export const Portfolio = ({ portfolio }: PortfolioProps): ReactElement => {
             <div className="experience__container bd-grid">
             {portfolio !== null ? (
                 <div className="projects__list">
-                {portfolio.map((project) => (
+                {portfolio.filter(p => !p.hide).map((project) => (
                     <Project key={project.title} {...project} />
                 ))}
                 </div>

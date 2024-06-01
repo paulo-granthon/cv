@@ -149,6 +149,7 @@ export const Data = {
             ],
         },
         {
+            hide: true,
             title: "Envyman",
 			hl_tech: "Bash",
             url: "envyman",

@@ -4,6 +4,7 @@ export interface RepoData {
 }
 
 export interface ProjectData {
+    hide?: boolean,
     title: string,
     hl_tech: string,
     url: string,
@@ -13,6 +14,7 @@ export interface ProjectData {
 }
 
 export interface ProjectProps {
+    hide?: boolean,
     title: string,
     hl_tech: string,
     url: string,
@@ -27,4 +29,3 @@ export interface PortfolioProps {
 export interface LanguageAliases {
     [key: string]: string,
 }
-
