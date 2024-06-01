@@ -34,7 +34,7 @@ export async function fetchGitHubRepositoriesLanguages(
         const githubUsername = import.meta.env.VITE_GITHUB_USERNAME;
         const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
 
-        const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${githubUsername}/repos`, {
+        const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${githubUsername}/repos?per_page=100`, {
             headers: {
                 Authorization: `token ${githubToken}`,
             },
