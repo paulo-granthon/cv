@@ -1,7 +1,51 @@
-import { ProjectData } from '../shared/Portfolio';
-import { LanguageAliases } from '../shared/Portfolio';
+import { ProjectData } from "../shared/Portfolio";
+import { LanguageAliases } from "../shared/Portfolio";
 
-export const Data = {
+export type DataSchema = {
+    profile: {
+        name: string;
+        ocupation: string;
+        location: string;
+        email: string;
+        telephone: string;
+    };
+    socials: {
+        label: string;
+        name: string;
+        url: string;
+        className: string;
+    }[];
+    about: {
+        label: string;
+        description: string;
+    };
+    hardSkills: string[];
+    frameworks: string[];
+    languages: {
+        items: string[];
+    };
+    languageAliases: LanguageAliases;
+    hideLanguages: string[];
+    softSkills: {
+        title: string;
+        items: string[];
+    };
+    works: {
+        title: string;
+        period: string;
+        company: string;
+        description: string[];
+    }[];
+    education: {
+        title: string;
+        period: string;
+        institution: string;
+        description: string[];
+    }[];
+    projects: ProjectData[];
+};
+
+export const getData: DataSchema = ({
     profile: {
         name: "Paulo Granthon",
         ocupation: "FullStack Developer",
@@ -158,4 +202,4 @@ export const Data = {
             additionalTech: [],
         },
     ] as ProjectData[],
-}
+});

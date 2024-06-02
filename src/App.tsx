@@ -45,7 +45,7 @@ function App() {
         works,
         education,
         projects,
-    } = dataSchema;
+    }: DataSchema = getData;
 
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
     const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
