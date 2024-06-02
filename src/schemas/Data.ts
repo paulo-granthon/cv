@@ -69,16 +69,10 @@ export const getData: DataSchema = ({
     ],
     about: {
         label: "About",
-        description: "Experienced Fullstack Developer skilled in web and desktop development using various languages and frameworks. Proficient in Agile methodologies. Strong focus on code quality and innovative solutions. Passionate about staying ahead of tech trends and thriving in challenging tasks.",
+        description:
+            "Experienced Fullstack Developer skilled in web and desktop development using various languages and frameworks. Proficient in Agile methodologies. Strong focus on code quality and innovative solutions. Passionate about staying ahead of tech trends and thriving in challenging tasks.",
     },
-    hardSkills: [
-        "Git & GitHub",
-        "CI/CD",
-        "Docker",
-        "SQL",
-        "Cloud",
-        "AWS",
-    ],
+    hardSkills: ["Git & GitHub", "CI/CD", "Docker", "SQL"],
     frameworks: [
         "React",
         "Django",
@@ -87,19 +81,13 @@ export const getData: DataSchema = ({
         "NodeJS",
     ],
     languages: {
-        items: [
-            "C++",
-        ],
+        items: ["C++"],
     },
     languageAliases: {
         Shell: "Bash",
         ShaderLab: "HLSL",
     } as LanguageAliases,
-    hideLanguages: [
-        "Svelte",
-        "Dockerfile",
-        "Markdown",
-    ],
+    hideLanguages: ["Svelte", "Dockerfile", "Markdown"],
     softSkills: {
         title: "Soft Skills",
         items: [
@@ -139,7 +127,7 @@ export const getData: DataSchema = ({
     projects: [
         {
             title: "Online Curriculum Vitae",
-			hl_tech: "React + TypeScript",
+            hl_tech: "React + TypeScript",
             url: "cv",
             additionalDesc: "Uses the GitHub API to fetch my profile picture, languages used and additional info for each of the projects on the portfolio section.",
 			showGitHubLangs: true,
@@ -154,48 +142,40 @@ export const getData: DataSchema = ({
         },
         {
             title: "RustyTetris",
-			hl_tech: "Rust",
+            hl_tech: "Rust",
             url: "rusty-tetris",
             additionalDesc: "",
             showGitHubLangs: false,
             additionalTech: [],
         },
         {
-            title: "TheToDoOffice",
-			hl_tech: "Django + HTMX",
-            url: "TheToDoOffice",
+            title: "Portfolio",
+            hl_tech: "Go + React + TypeScript",
+            url: "portfolio_apis",
             additionalDesc: "",
-			showGitHubLangs: true,
-            additionalTech: [
-                "Django",
-            ],
+            showGitHubLangs: true,
+            additionalTech: ["Docker"],
         },
         {
-            title: "Khali",
-			hl_tech: "Tkinter",
-            url: "Khali",
+            title: "TheToDoOffice",
+            hl_tech: "Django + HTMX",
+            url: "TheToDoOffice",
             additionalDesc: "",
-			showGitHubLangs: true,
-            additionalTech: [
-                "Scrum",
-            ],
+            showGitHubLangs: true,
+            additionalTech: ["Django"],
         },
         {
             title: "API2Semestre",
-			hl_tech: "JavaFX",
+            hl_tech: "JavaFX",
             url: "API2Semestre",
             additionalDesc: "",
-			showGitHubLangs: true,
-            additionalTech: [
-                "Scrum",
-                "Product Owner",
-                "Maven",
-            ],
+            showGitHubLangs: true,
+            additionalTech: ["Scrum", "Product Owner", "Maven"],
         },
         {
             hide: true,
             title: "Envyman",
-			hl_tech: "Bash",
+            hl_tech: "Bash",
             url: "envyman",
             additionalDesc: "",
             showGitHubLangs: false,

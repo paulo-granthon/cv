@@ -18,7 +18,7 @@ import { Socials } from "./components/Socials";
 import { PDF } from "./components/PDF";
 import { Theme } from "./components/Theme";
 
-import { Data as dataSchema } from "./schemas/Data";
+import { getData, DataSchema } from "./schemas/Data";
 
 import { ProjectProps } from "./shared/Portfolio"
 
@@ -102,6 +102,7 @@ function App() {
         languages.items,
         projects,
     ]);
+
     return (
         <>
             <MetaTags {...profile} {...about} />
@@ -111,7 +112,7 @@ function App() {
                         {!isGenerating ? (
                             <div className="cv-toolbox">
                                 <PDF contentId="bd-container" setIsGenerating={setIsGenerating} />
-                                <Theme theme={theme} toggleTheme={toggleTheme}/>
+                                <Theme theme={theme} toggleTheme={toggleTheme} />
                             </div>
                         ) : (
                             null
