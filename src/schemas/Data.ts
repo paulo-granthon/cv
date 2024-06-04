@@ -103,6 +103,15 @@ export const getData: DataSchema = ({
     },
     works: [
         {
+            title: "Backend Developer Intern",
+            period: "Sep. 2023 - Now",
+            company: "Gorila Invest",
+            description: [
+                "Contributed to the development and maintenance of `Securities` service, responsible for managing securities data, events and prices using primarily TypeScript and Golang.",
+                "Participated in the implementation of endpoints, data fetching and processing, database queries, unit and integration tests as well as code reviews and migration of legacy code to new architecture.",
+            ],
+        },
+        {
             title: "Information Systems Developer",
             period: "Aug. 2022 - Jul. 2023",
             company: "GWCloud",
