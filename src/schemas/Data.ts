@@ -32,6 +32,8 @@ export const Data = {
         "CI/CD",
         "Docker",
         "SQL",
+        "Cloud",
+        "AWS",
     ],
     frameworks: [
         "React",
@@ -98,6 +100,7 @@ export const Data = {
             additionalDesc: "Uses the GitHub API to fetch my profile picture, languages used and additional info for each of the projects on the portfolio section.",
 			showGitHubLangs: true,
             additionalTech: [
+                "AWS",
                 "CI/CD",
                 "React",
                 "Docker",
