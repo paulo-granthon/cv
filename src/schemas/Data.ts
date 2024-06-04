@@ -79,6 +79,13 @@ export const getData: DataSchema = ({
         "Rocket",
         "Diesel",
         "NodeJS",
+        "Jest",
+        "ExpressJS",
+        "Spring Boot",
+        "Vue",
+        "Tkinter",
+        "JavaFX",
+        "Kysely",
     ],
     languages: {
         items: ["C++"],
