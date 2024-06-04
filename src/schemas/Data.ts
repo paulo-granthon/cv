@@ -138,6 +138,10 @@ export const getData: DataSchema = ({
                 "Axios",
                 "NodeJS",
             ]
+            additionalDesc:
+                "Uses the GitHub API to fetch my profile picture, languages used and additional info for each of the projects on the portfolio section.",
+            showGitHubLangs: true,
+            additionalTech: ["CI/CD", "React", "Docker", "Axios", "NodeJS"],
         },
         {
             title: "RustyTetris",
