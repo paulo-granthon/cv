@@ -108,8 +108,7 @@ export const getData: DataSchema = ({
             company: "GWCloud",
             description: [
                 "Developed and maintained information systems for external clients of GWCloud.",
-                "My work included both the Back End and Front End using ServiceNow, JavaScript, and HTML as the main technologies.",
-                "Contributed to the development of an award-winning HR platform for the Globo television network."
+                "Contributed to the development of an award-winning HR platform for the Globo television network.",
             ],
         },
     ],
