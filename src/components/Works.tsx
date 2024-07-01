@@ -33,7 +33,7 @@ interface WorksProps {
 export const Works = ({ works }: WorksProps): ReactElement => {
     return (
         <section className="work-experience section" id="experience">
-                <h2 className="section-title">Professional History</h2>
+                <h2 className="section-title">Recent Experience</h2>
                 <div className="experience__container bd-grid">
                     {works.map((work) => (
                         <Work key={work.company} {...work} />
