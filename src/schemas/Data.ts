@@ -88,7 +88,7 @@ export const Data: DataSchema = {
     "Kysely",
   ],
   languages: {
-    items: ["C++"],
+    items: ["C++", "C#"],
   },
   languageAliases: {
     Shell: "Bash",
