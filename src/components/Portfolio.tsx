@@ -11,10 +11,6 @@ const Project = ({
 }: ProjectProps): ReactElement => {
   return (
     <div className="experience__content project">
-      <div className="experience__time">
-        <span className="experience__rounder"></span>
-        <span className="experience__line"></span>
-      </div>
       <div className="experience__data bd-grid">
         <div className="project__header">
           <h3 className="experience__title">{title}</h3>
