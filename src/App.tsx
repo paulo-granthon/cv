@@ -100,7 +100,11 @@ function App() {
             <ListSection title="Hard Skills" items={hardSkills} />
             <ListSection title="Frameworks" items={frameworks} />
             {languagesFetched.length > 0 && (
-              <ListSection title="Languages" items={languagesFetched} />
+              <ListSection
+                title="Languages"
+                items={languagesFetched}
+                subText="Sorted by frequency of use in my GitHub profile"
+              />
             )}
             <ListSection {...softSkills} />
             <Socials label="Socials" socials={socials} />
