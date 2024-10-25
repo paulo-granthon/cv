@@ -112,6 +112,7 @@ export const Data: DataSchema = {
   softSkills: {
     title: "Soft Skills",
     items: [
+      "Ownership Mindset",
       "Adaptabillity",
       "Self-Motivation",
       "Resilience",
