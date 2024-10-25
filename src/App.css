@@ -32,14 +32,22 @@
 
 /* Light Theme Colors */
 body {
-  --url-color: #0072c6; /* A slightly brighter blue */
-  --button-hover-color: #1e90ff; /* A shade of blue that stands out */
-  --title-color: #2a2a2a; /* Dark gray for titles */
-  --text-color: #606060; /* Slightly darker text color */
-  --text-color-light: #808080; /* Slightly lighter text color */
-  --container-color: #fcfcfc; /* A light gray container background */
-  --container-color-alt: #f0f0f0; /* Slightly darker alternate container background */
-  --body-color: #bbb; /* White body background */
+  /* A slightly brighter blue */
+  --url-color: #0072c6;
+  /* A shade of blue that stands out */
+  --button-hover-color: #1e90ff;
+  /* Dark gray for titles */
+  --title-color: #2a2a2a;
+  /* Slightly darker text color */
+  --text-color: #606060;
+  /* Slightly lighter text color */
+  --text-color-light: #808080;
+  /* A light gray container background */
+  --container-color: #fcfcfc;
+  /* Slightly darker alternate container background */
+  --container-color-alt: #f0f0f0;
+  /* White body background */
+  --body-color: #bbb;
 }
 
 /* Dark Theme Colors */
@@ -58,7 +66,10 @@ body.dark-theme {
 ::before,
 ::after {
   box-sizing: border-box;
-  transition: background-color 0.5s ease, color 0.5s ease; /* Transition effect */
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+  /* Transition effect */
 }
 
 html {
@@ -309,7 +320,7 @@ img {
 }
 
 .profile__description {
-  text-align: center;
+  text-align: left !important;
 }
 
 .education__content,
@@ -516,6 +527,14 @@ img {
     justify-content: center;
   }
 
+  .profile__description {
+    text-align: left !important;
+  }
+
+  .section-subtitle {
+    text-align: center;
+  }
+
   .social__container {
     justify-content: center;
   }
@@ -536,6 +555,7 @@ img {
   .items__name {
     min-width: unset;
     width: calc(50vw - 0.5rem);
+    text-align: center;
   }
 
   .experience__container {
@@ -622,7 +642,7 @@ img {
 
   .section-title,
   .profile__description {
-    text-align: initial;
+    text-align: left;
   }
 
   .home__container {
