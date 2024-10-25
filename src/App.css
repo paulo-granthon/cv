@@ -369,8 +369,17 @@ img {
   color: var(--title-color);
 }
 
-.education__year {
+.education__year,
+.experience__company,
+.section-subtitle {
   font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  font-weight: bold;
+}
+
+.section-subtitle {
+  font-style: italic;
+  margin-bottom: var(--mb-2);
 }
 
 .list_section__content {
