@@ -97,7 +97,6 @@ function App() {
             ) : null}
             <Profile {...profile} image={profilePicture} />
             <About {...about} />
-            <ListSection title="Hard Skills" items={hardSkills} />
             <ListSection title="Frameworks" items={frameworks} />
             {languagesFetched.length > 0 && (
               <ListSection
@@ -106,6 +105,7 @@ function App() {
                 subText="Sorted by frequency of use in my GitHub profile"
               />
             )}
+            <ListSection title="Other Hard Skills" items={hardSkills} />
             <ListSection {...softSkills} />
             <Socials label="Socials" socials={socials} />
           </div>
