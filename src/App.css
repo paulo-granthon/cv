@@ -364,6 +364,10 @@ img {
   color: var(--text-color-light);
 }
 
+.experience__hl-tech_subtitle {
+  display: none;
+}
+
 .education__studies,
 .experience__project {
   font-size: var(--small-font-size);
@@ -540,6 +544,12 @@ img {
 
   .experience__hl-tech {
     display: none;
+  }
+
+  .experience__hl-tech_subtitle {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    display: unset;
   }
 
   .project {

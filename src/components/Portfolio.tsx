@@ -24,6 +24,9 @@ const Project = ({
         <a className="project-url" href={url} target="_blank">
           {url}
         </a>
+      <p
+        className="experience__hl-tech_subtitle section-subtitle"
+      >{hl_tech}</p>
         {description.map((desc, i) => (
           <Description key={i} desc={desc} />
         ))}
