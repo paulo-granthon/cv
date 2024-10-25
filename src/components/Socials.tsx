@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 
 interface SocialProps {
-    label: string,
-    name: string,
-    url: string,
-    className: string,
+  label: string;
+  name: string;
+  url: string;
+  className: string;
 }
 
 const Social = ({ label, url, className }: SocialProps): ReactElement => (
@@ -14,8 +14,8 @@ const Social = ({ label, url, className }: SocialProps): ReactElement => (
 );
 
 interface SocialsProps {
-    label: string,
-    socials: SocialProps[], 
+  label: string;
+  socials: SocialProps[];
 }
 
 export const Socials = ({ label, socials }: SocialsProps): ReactElement => {
@@ -23,7 +23,9 @@ export const Socials = ({ label, socials }: SocialsProps): ReactElement => {
     <section className="social section">
       <h2 className="section-title">{label}</h2>
       <div className="social__container bd-grid">
-        {socials.map((social) => <Social key={social.name} {...social} />)}
+        {socials.map((social) => (
+          <Social key={social.name} {...social} />
+        ))}
       </div>
     </section>
   );

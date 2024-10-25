@@ -45,7 +45,7 @@ export type DataSchema = {
   projects: ProjectData[];
 };
 
-export const getData: DataSchema = {
+export const Data: DataSchema = {
   profile: {
     name: "Paulo Granthon",
     ocupation: "FullStack Developer",

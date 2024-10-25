@@ -1,15 +1,11 @@
-// import { ReactElement } from 'react';
-//
+// import { ReactElement } from "react";
 //
 // interface LocalizationProps {
-//     setLocalization: () => void,
+//   setLocalization: () => void;
 // }
 //
-// export const Localization = ({ setLocalization }: LocalizationProps): ReactElement => {
-//     return (
-//         <button
-//             className="actions material-symbols-outlined">
-//             public
-//         </button>
-//     );
-// }
+// export const Localization = ({
+//   setLocalization,
+// }: LocalizationProps): ReactElement => {
+//   return <button className="actions material-symbols-outlined">public</button>;
+// };
