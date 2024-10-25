@@ -127,6 +127,16 @@ export const Data: DataSchema = {
         "Contributed to the development of an award-winning HR platform for the Globo television network.",
       ],
     },
+    {
+      title: "Fullstack Developer Freelancer",
+      period: "Oct. 2023 - Jun. 2024",
+      company: "Raízen",
+      description: [
+        "Planned and led the resolution of critical security vulnerability fixes for a platform that manages key routines and processes at the third-largest energy company in Brazil by revenue, and the fifth-largest overall.",
+        "Addressed issues identified in a third-party penetration test, enhancing account security, mitigating privilege escalation risks, and securing API authentication for a more robust system architecture.",
+        "Planned and led the implementation of a new API within a microservices architecture, along with the corresponding frontend, to support logistics and goods transportation management functionalities.",
+      ],
+    },
   ],
   education: [
     {
