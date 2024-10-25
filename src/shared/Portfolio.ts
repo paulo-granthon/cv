@@ -4,6 +4,7 @@ export interface RepoData {
 }
 
 export interface ProjectData {
+    hide?: boolean,
     title: string,
     hl_tech: string,
     url: string,

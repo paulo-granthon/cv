@@ -181,6 +181,7 @@ export const Data: DataSchema = {
       additionalTech: ["Docker"],
     },
     {
+      hide: true,
       title: "TheToDoOffice",
       hl_tech: "Django + HTMX",
       url: "TheToDoOffice",
@@ -189,6 +190,7 @@ export const Data: DataSchema = {
       additionalTech: ["Django"],
     },
     {
+      hide: true,
       title: "API2Semestre",
       hl_tech: "JavaFX",
       url: "API2Semestre",

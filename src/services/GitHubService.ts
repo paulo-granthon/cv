@@ -120,6 +120,10 @@ export async function fetchPortfolioData(
     const projectPropsList: ProjectProps[] = [];
 
     for (const item of portfolio) {
+      if (item.hide) {
+        continue;
+      }
+
       const description = item.additionalDesc ? [item.additionalDesc] : [];
       const repoUrl = `https://api.github.com/repos/${githubUsername}/${item.url}`;
 
