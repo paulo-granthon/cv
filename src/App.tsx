@@ -68,7 +68,9 @@ function App() {
 
     // Fetch the hard skills from GitHub repositories when the component mounts
     fetchGitHubRepositoriesLanguages(hideLanguages, languageAliases)
-      .then((langs) => setlanguagesFetched([...languages.items, ...langs]))
+      .then((fetchedLanguages) =>
+        setlanguagesFetched([...fetchedLanguages, ...languages.items]),
+      )
       .catch((error) =>
         console.error("Error fetching GitHub repositories languages:", error),
       );
