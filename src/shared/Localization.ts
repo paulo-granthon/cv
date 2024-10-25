@@ -1,5 +1,4 @@
-
 export interface LocalizationProps {
-    language: string,
-    file: string,
+  language: string;
+  file: string;
 }

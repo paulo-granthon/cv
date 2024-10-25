@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 
 interface DescriptionProps {
-    desc: string,
+  desc: string;
 }
 
 export const Description = ({ desc }: DescriptionProps): ReactElement => (
-    <p className="experience__description">{desc}</p>
+  <p className="experience__description">{desc}</p>
 );
