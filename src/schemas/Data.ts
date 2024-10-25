@@ -74,7 +74,7 @@ export const Data: DataSchema = {
   },
   hardSkills: ["Git & GitHub", "CI/CD", "Docker", "SQL"],
   frameworks: [
-    "React / Native",
+    "React + Native",
     "Django",
     "Rocket",
     "Diesel",
@@ -99,7 +99,16 @@ export const Data: DataSchema = {
     Shell: "Bash",
     ShaderLab: "HLSL",
   } as LanguageAliases,
-  hideLanguages: ["Svelte", "Dockerfile", "Markdown"],
+  hideLanguages: [
+    "Svelte",
+    "Dockerfile",
+    "Markdown",
+    "Makefile",
+    "HTML",
+    "CSS",
+    "Vue",
+    "PLpgSQL",
+  ],
   softSkills: {
     title: "Soft Skills",
     items: [
