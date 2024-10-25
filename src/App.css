@@ -39,7 +39,7 @@ body {
   --text-color-light: #808080; /* Slightly lighter text color */
   --container-color: #fcfcfc; /* A light gray container background */
   --container-color-alt: #f0f0f0; /* Slightly darker alternate container background */
-  --body-color: #ffffff; /* White body background */
+  --body-color: #bbb; /* White body background */
 }
 
 /* Dark Theme Colors */
@@ -50,7 +50,7 @@ body.dark-theme {
   --text-color: #94a3bb;
   --container-color: #20232c;
   --container-color-alt: #2b303b;
-  --body-color: #1a1d24;
+  --body-color: #1b1e22;
 }
 
 /*========== BASE ==========*/
