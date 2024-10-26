@@ -183,7 +183,7 @@ export const Data: DataSchema = {
       additionalTech: [],
     },
     {
-      title: "Portfolio",
+      title: "Portfolio Platform",
       hl_tech: "Go + React + TypeScript",
       url: "portfolio_apis",
       additionalDesc: "",
