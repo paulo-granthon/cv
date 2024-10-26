@@ -39,7 +39,7 @@ function App() {
   } = dataSchema;
 
   const [profilePicture, setProfilePicture] = useState<string | null>(null);
-  const [languagesFetched, setlanguagesFetched] = useState<string[]>([]);
+  const [languagesFetched, setLanguagesFetched] = useState<string[]>([]);
   const [portfolio, setPortfolio] = useState<ProjectProps[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [theme, setTheme] = useState<string>("0");
@@ -69,7 +69,9 @@ function App() {
     // Fetch the hard skills from GitHub repositories when the component mounts
     fetchGitHubRepositoriesLanguages(hideLanguages, languageAliases)
       .then((fetchedLanguages) =>
-        setlanguagesFetched([...fetchedLanguages, ...languages.items]),
+        setLanguagesFetched([
+          ...new Set([...fetchedLanguages, ...languages.items]),
+        ]),
       )
       .catch((error) =>
         console.error("Error fetching GitHub repositories languages:", error),
