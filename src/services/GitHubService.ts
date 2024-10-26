@@ -54,36 +54,41 @@ export async function fetchGitHubRepositoriesLanguages(
     );
 
     // Count the frequency of each language
-    const languages: { [language: string]: number } = {};
+    const languages: { [language: string]: { lines: number; repos: number } } =
+      {};
 
     const totalRepoCount = response.data.length;
 
-    const repoLanguagesPromises = response.data.map(
-      (repo: { languages_url: string }) => {
+    const repoLanguagesResponses = await Promise.all(
+      response.data.map(async (repo: { languages_url: string }) => {
         return axios.get(`${repo.languages_url}`, {
           headers: {
             Authorization: `token ${githubToken}`,
           },
         });
-      },
+      }),
     );
 
-    const repoLanguagesResponses = await Promise.all(repoLanguagesPromises);
-
     repoLanguagesResponses.forEach((repoLanguagesResponse) => {
-      const repoLanguages = Object.keys(repoLanguagesResponse.data);
-      const repoLanguageCount = repoLanguages.length;
-      repoLanguages.forEach((language) => {
-        languages[language] =
-          (languages[language] || 0) + 1 / totalRepoCount / repoLanguageCount;
+      const repoLanguages: {
+        [key: string]: number;
+      } = repoLanguagesResponse.data;
+      Object.entries(repoLanguages).forEach(([language, lines]) => {
+        languages[language] = {
+          lines: (languages[language]?.lines || 0) + lines,
+          repos: (languages[language]?.repos || 0) + 1,
+        };
       });
     });
 
     return Object.entries(languages)
-      .sort((a, b) => b[1] - a[1])
-      .map(([language]) => language)
-      .filter((lang) => !hideLanguages.includes(lang))
-      .map((lang) => (languageAliases[lang] ? languageAliases[lang] : lang));
+      .filter(([language]) => !hideLanguages.includes(language))
+      .map(([language, value]) => ({
+        name: languageAliases[language] || language,
+        frequency: (value.lines * value.repos) / totalRepoCount,
+      }))
+      .sort((a, b) => b.frequency - a.frequency)
+      .map((lang) => lang.name);
   } catch (error) {
     console.error("Error fetching GitHub repositories languages:", error);
     return [];
