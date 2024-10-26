@@ -5,6 +5,7 @@ import {
   ProjectProps,
   LanguageAliases,
 } from "../shared/Portfolio";
+import { Octokit } from "octokit";
 
 const GITHUB_API_BASE_URL = "https://api.github.com";
 
@@ -41,17 +42,20 @@ export async function fetchGitHubRepositoriesLanguages(
   languageAliases: LanguageAliases,
 ) {
   try {
-    const githubUsername = import.meta.env.VITE_GITHUB_USERNAME;
+    // const githubUsername = import.meta.env.VITE_GITHUB_USERNAME;
     const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
 
-    const response = await axios.get(
-      `${GITHUB_API_BASE_URL}/users/${githubUsername}/repos?per_page=100`,
-      {
-        headers: {
-          Authorization: `token ${githubToken}`,
-        },
+    const octokit = new Octokit({
+      auth: githubToken,
+    });
+
+    const response = await octokit.request("GET /user/repos", {
+      per_page: 100,
+      affiliation: "owner",
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
       },
-    );
+    });
 
     // Count the frequency of each language
     const languages: { [language: string]: { lines: number; repos: number } } =
