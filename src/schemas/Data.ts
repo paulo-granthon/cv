@@ -160,7 +160,7 @@ export const Data: DataSchema = {
       description: [
         "Planned and led the resolution of critical security vulnerability fixes for a platform that manages key routines and processes at the third-largest energy company in Brazil by revenue, and the fifth-largest overall.",
         "Addressed issues identified in a third-party penetration test, enhancing account security, mitigating privilege escalation risks, and securing API authentication for a more robust system architecture.",
-        "Planned and led the implementation of a new API within a microservices architecture, along with the corresponding frontend, to support logistics and goods transportation management functionalities.",
+        "Planned and led the implementation of a new API within a microservices architecture, along with the corresponding frontend, to support logistics and goods transportation management.",
       ],
     },
     {
@@ -168,7 +168,7 @@ export const Data: DataSchema = {
       period: "Aug. 2022 - Jul. 2023",
       company: "GWCloud",
       description: [
-        "Developed and maintained information systems for external clients of GWCloud.",
+        "Developed and maintained information systems for external clients of GWCloud through the ServiceNow platform, incorporating JavaScript and HTML to customize and enhance system functionalities",
         "Contributed to the development of an award-winning HR platform for the Globo television network.",
       ],
     },
