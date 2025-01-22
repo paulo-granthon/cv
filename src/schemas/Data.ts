@@ -1,24 +1,44 @@
 import { ProjectData } from "../shared/Portfolio";
 import { LanguageAliases } from "../shared/Portfolio";
 
+type Work = {
+  title: string;
+  period: string;
+  company: string;
+  description: string[];
+};
+
+type Profile = {
+  name: string;
+  ocupation: string;
+  location: string;
+  email: string;
+  telephone: string;
+};
+
+type Social = {
+  label: string;
+  name: string;
+  url: string;
+  className: string;
+};
+
+type About = {
+  label: string;
+  description: string;
+};
+
+type Education = {
+  title: string;
+  period: string;
+  institution: string;
+  description: string[];
+};
+
 export type DataSchema = {
-  profile: {
-    name: string;
-    ocupation: string;
-    location: string;
-    email: string;
-    telephone: string;
-  };
-  socials: {
-    label: string;
-    name: string;
-    url: string;
-    className: string;
-  }[];
-  about: {
-    label: string;
-    description: string;
-  };
+  profile: Profile;
+  socials: Social[];
+  about: About;
   hardSkills: string[];
   frameworks: string[];
   languages: {
@@ -30,18 +50,8 @@ export type DataSchema = {
     title: string;
     items: string[];
   };
-  works: {
-    title: string;
-    period: string;
-    company: string;
-    description: string[];
-  }[];
-  education: {
-    title: string;
-    period: string;
-    institution: string;
-    description: string[];
-  }[];
+  works: Work[];
+  education: Education[];
   projects: ProjectData[];
 };
 
@@ -125,11 +135,11 @@ export const Data: DataSchema = {
   },
   works: [
     {
-      title: "Backend Developer Intern",
-      period: "Sep. 2023 - Now",
+      title: "Backend Developer",
+      period: "Dec. 2024 - Present",
       company: "Gorila Invest",
       description: [
-        "Contributed to the development and maintenance of `Securities` service, responsible for managing securities data, events and prices using primarily TypeScript and Golang.",
+        "Contributed to the development and maintenance of Securities service, responsible for managing securities data, events and prices using primarily TypeScript and Golang.",
         "Participated in the implementation of endpoints, data fetching and processing, database queries, unit and integration tests as well as code reviews and migration of legacy code to new architecture.",
       ],
     },
