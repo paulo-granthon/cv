@@ -140,7 +140,7 @@ img {
 
 .bd-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .l-header {
@@ -560,6 +560,11 @@ img {
 
   .experience__container {
     max-width: 100vw;
+  }
+
+  .experience__group {
+    margin: 0;
+    padding: 0;
   }
 
   .experience__hl-tech {

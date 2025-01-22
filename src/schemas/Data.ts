@@ -6,7 +6,7 @@ type WorkBase = {
   period: string;
 };
 
-type WorkCurrent = WorkBase & {
+export type WorkCurrent = WorkBase & {
   company: string;
   description: string[];
   previous?: WorkBase[];
