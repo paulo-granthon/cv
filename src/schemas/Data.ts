@@ -1,11 +1,15 @@
 import { ProjectData } from "../shared/Portfolio";
 import { LanguageAliases } from "../shared/Portfolio";
 
-type Work = {
+type WorkBase = {
   title: string;
   period: string;
+};
+
+type WorkCurrent = WorkBase & {
   company: string;
   description: string[];
+  previous?: WorkBase[];
 };
 
 type Profile = {
@@ -50,7 +54,7 @@ export type DataSchema = {
     title: string;
     items: string[];
   };
-  works: Work[];
+  works: WorkCurrent[];
   education: Education[];
   projects: ProjectData[];
 };
@@ -141,6 +145,12 @@ export const Data: DataSchema = {
       description: [
         "Contributed to the development and maintenance of Securities service, responsible for managing securities data, events and prices using primarily TypeScript and Golang.",
         "Participated in the implementation of endpoints, data fetching and processing, database queries, unit and integration tests as well as code reviews and migration of legacy code to new architecture.",
+      ],
+      previous: [
+        {
+          title: "Backend Developer Intern",
+          period: "Sep. 2023 - Nov. 2024",
+        },
       ],
     },
     {
