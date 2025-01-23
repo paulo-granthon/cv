@@ -122,6 +122,7 @@ export const Data: DataSchema = {
     "CSS",
     "Vue",
     "PLpgSQL",
+    "Dune",
   ],
   softSkills: {
     title: "Soft Skills",
