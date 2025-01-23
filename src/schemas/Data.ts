@@ -159,9 +159,9 @@ export const Data: DataSchema = {
       period: "Oct. 2023 - Jun. 2024",
       company: "Raízen",
       description: [
-        "Planned and led the resolution of critical security vulnerability fixes for a platform that manages key routines and processes at the third-largest energy company in Brazil by revenue, and the fifth-largest overall.",
-        "Addressed issues identified in a third-party penetration test, enhancing account security, mitigating privilege escalation risks, and securing API authentication for a more robust system architecture.",
-        "Planned and led the implementation of a new API within a microservices architecture, along with the corresponding frontend, to support logistics and goods transportation management.",
+        "Planned and led the resolution of several critical security vulnerabilities in the platform that manages key routines and processes for the third-largest energy company in Brazil.",
+        "Addressed several other issues identified by a third-party penetration test, enhancing account security, mitigating privilege escalation risks, and securing API authentication.",
+        "Planned and led the implementation of a new service within a microservices architecture, along with the corresponding frontend, to support logistics and goods transportation management needs.",
       ],
     },
     {
@@ -204,7 +204,7 @@ export const Data: DataSchema = {
       additionalTech: [],
     },
     {
-      title: "Portfolio Platform",
+      title: "Portfolio",
       hl_tech: "Go + React + TypeScript",
       url: "portfolio_apis",
       additionalDesc: "",
