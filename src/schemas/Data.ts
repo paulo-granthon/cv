@@ -112,7 +112,7 @@ export const Data: DataSchema = {
   languageAliases: {
     Shell: "Bash",
     ShaderLab: "HLSL",
-  } as LanguageAliases,
+  },
   hideLanguages: [
     "Svelte",
     "Dockerfile",
@@ -238,5 +238,5 @@ export const Data: DataSchema = {
       showGitHubLangs: false,
       additionalTech: [],
     },
-  ] as ProjectData[],
+  ],
 };
